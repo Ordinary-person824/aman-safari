@@ -172,7 +172,49 @@
      <h2>conclusion</h2>
 
      <p>In conclusion, Serengeti National Park is an important natural heritage site. Its wildlife, beauty, 
-        and contribution to tourism make it one of Tanzania's greatest attractions. </p>
+        and contribution to tourism make it one of Tanzania's greatest attractions. </p> 
+            <h2>When Is The Best Time To See The Great Migration?</h2>
+<div style="background:rgba(255,255,255,0.1); padding:20px; border-radius:10px; margin:20px 0;">
+  <label style="color:white; font-weight:bold;">Select your travel month:</label><br>
+  <select id="month" onchange="showMigration()" style="padding:10px; margin:10px 0; border-radius:5px; width:100%; max-width:300px;">
+    <option value="">-- Pick a month --</option>
+    <option value="jan">January</option>
+    <option value="feb">February</option>
+    <option value="mar">March</option>
+    <option value="apr">April</option>
+    <option value="may">May</option>
+    <option value="jun">June</option>
+    <option value="jul">July</option>
+    <option value="aug">August</option>
+    <option value="sep">September</option>
+    <option value="oct">October</option>
+    <option value="nov">November</option>
+    <option value="dec">December</option>
+  </select>
+  <div id="migration-result" style="color:#FFD700; font-size:18px; margin-top:15px; font-weight:bold;"></div>
+</div>
+
+<script>
+function showMigration() {
+  const month = document.getElementById('month').value;
+  const result = document.getElementById('migration-result');
+  const data = {
+    jan: "📍 Southern Serengeti - Calving season! 8,000 babies born daily. Predator action is insane.",
+    feb: "📍 Southern Serengeti - Peak calving. Best time for lions + cheetahs hunting.",
+    mar: "📍 Southern Serengeti - Herds start moving north. Lots of babies still.",
+    apr: "📍 Central Serengeti - Long rains. Fewer tourists, lush & green, great prices.",
+    may: "📍 Western Corridor - Moving toward Grumeti River. First river crossings start.",
+    jun: "📍 Western Serengeti - Grumeti River crossings. Crocodiles vs wildebeest!",
+    jul: "📍 Northern Serengeti - Herds reach Mara River. Famous crossings begin.",
+    aug: "📍 Northern Serengeti/Kenya - PEAK Mara River crossings. Most dramatic time.",
+    sep: "📍 Masai Mara, Kenya - Herds in Kenya now. Still great crossings.",
+    oct: "📍 Northern Serengeti - Herds start moving south back to Tanzania.",
+    nov: "📍 Eastern/Central Serengeti - Short rains begin. Herds moving south.",
+    dec: "📍 Southern Serengeti - Herds arrive back. Cycle restarts. Green & beautiful."
+  };
+  result.innerHTML = data[month] || "";
+}
+</script>
       </div>
       
 
