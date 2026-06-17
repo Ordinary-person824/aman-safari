@@ -233,6 +233,119 @@ function showRuaha() {
 </div> 
 </body>
       
-<br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div></body>
+<br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div>
+<style>
+.aman-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+.aman-chat-box {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+}
+.aman-header {
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  font-weight: bold;
+}
+.aman-body {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.aman-msg {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+.aman-question {
+  background: #DCF8C6;
+  text-align: right;
+  margin-left: 40px;
+}
+.aman-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+</style>
+
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI</button>
+
+<div class="aman-chat-box" id="amanBox">
+  <div class="aman-header">
+    Aman AI - Safari Guide
+    <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
+  </div>
+  <div class="aman-body" id="amanChat">
+    <div class="aman-msg">Hi! I'm Aman AI. Ask me about Serengeti 👇</div>
+    <button class="aman-btn" onclick="askAman('price')">💰 How much does it cost?</button>
+    <button class="aman-btn" onclick="askAman('days')">📅 How many days needed?</button>
+    <button class="aman-btn" onclick="askAman('migration')">🦓 Best time for migration?</button>
+    <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat with human Aman</button>
+  </div>
+</div>
+
+<script>
+function toggleAman() {
+  var box = document.getElementById('amanBox');
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+  } else {
+    box.style.display = 'block';
+  }
+}
+
+function askAman(topic) {
+  var chat = document.getElementById('amanChat');
+  var answers = {
+    price: "Serengeti: $350-600 per day. Includes guide, car, park fees, meals. Camping saves 40%.",
+    days: "3 days minimum. 4-5 days ideal for migration + big cats. Less than 3 = rushed.",
+    migration: "Jan-Mar: South. Jun-Jul: West. Aug-Oct: North Kenya border. Use predictor above!",
+    whatsapp: "Opening WhatsApp to human Aman..."
+  };
+
+  chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
+  chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
+
+  if(topic === 'whatsapp') {
+    window.open('https://wa.me/255699004685?text=Hi%20Aman%20from%20your%20website', '_blank');
+  }
+
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+</body>
 </html>
       
