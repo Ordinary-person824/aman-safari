@@ -222,5 +222,130 @@ function showMigration() {
                padding:20px; 
                margin-top:50px;"> 
       <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div> 
+      <!-- Aman AI Safari Assistant -->
+<style>
+.aman-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.aman-chat-box {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-family: Arial, sans-serif;
+}
+
+.aman-header {
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  font-weight: bold;
+}
+
+.aman-body {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.aman-msg {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.aman-question {
+  background: #DCF8C6;
+  text-align: right;
+  margin-left: 40px;
+}
+
+.aman-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.aman-btn:hover {
+  background: #e8e8e8;
+}
+</style>
+
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI</button>
+
+<div class="aman-chat-box" id="amanBox">
+  <div class="aman-header">
+    Aman AI - Safari Guide 
+    <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
+  </div>
+  <div class="aman-body" id="amanChat">
+    <div class="aman-msg">Hi! I'm Aman AI. Ask me anything about safari planning 👇</div>
+    <button class="aman-btn" onclick="askAman('price')">💰 How much does a safari cost?</button>
+    <button class="aman-btn" onclick="askAman('pack')">🎒 What should I pack?</button>
+    <button class="aman-btn" onclick="askAman('days')">📅 How many days do I need?</button>
+    <button class="aman-btn" onclick="askAman('visa')">🛂 Do I need a visa for Tanzania?</button>
+    <button class="aman-btn" onclick="askAman('safe')">🦁 Is safari safe?</button>
+    <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat with human Aman</button>
+  </div>
+</div>
+
+<script>
+function toggleAman() {
+  const box = document.getElementById('amanBox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+}
+
+function askAman(topic) {
+  const chat = document.getElementById('amanChat');
+  const answers = {
+    price: "Serengeti: $350-600/day. Ruaha: $400-700/day. Price depends on lodge vs camping. Camping saves 40%. Want exact quote?",
+    pack: "Pack: Neutral clothes, hat, sunscreen, binoculars, camera, malaria pills. Avoid bright colors. Nights get cold!",
+    days: "Minimum 3 days per park. Serengeti: 4-5 days for migration. Ruaha: 3-4 days. Less than 3 days = too rushed.",
+    visa: "Most countries get visa on arrival for $50 USD. Valid 90 days. Need passport 6+ months validity + yellow fever card.",
+    safe: "Very safe with guides. We stay in vehicles. Animals ignore cars. 0 tourist attacks in 20+ years at Ruaha/Serengeti.",
+    whatsapp: "Connecting you to human Aman now..."
+  };
+  
+  chat.innerHTML += <div class="aman-msg aman-question">${event.target.innerText}</div>;
+  chat.innerHTML += <div class="aman-msg">${answers[topic]}</div>;
+  
+  if(topic === 'whatsapp') {
+    setTimeout(() => {
+      window.open('https://wa.me/255699004685?text=Hi%20Aman%2C%20your%20AI%20assistant%20sent%20me', '_blank');
+    }, 1000);
+  }
+  
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
 </body>
 </html>
