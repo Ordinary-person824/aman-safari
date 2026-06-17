@@ -1,7 +1,29 @@
 <html>
 <head>
       <title>National parks in Tanzania</title>
-       <style> /* Mobile fix: stack menu links on small screens */ 
+       <style> 
+              nav {
+                   background: rgba(0,0,0,0.6);
+                   padding: 15px;
+                   text-align: center;
+                   backdrop-filter: blur(5px);
+                   position: relative;
+                   z-index:100;
+             }
+
+             nav a {
+                   color: white;
+                   text-decoration: none;
+                   margin: 0 15px;
+                   font-size: 18px;
+                   font-weight: bold;
+                   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+                   padding: 8px 15px;
+                   border-radius: 20px;
+             }
+            nav a:hover { 
+             
+             /* Mobile fix: stack menu links on small screens */ 
              @media (max-width: 600px) { 
                    .menu-link { 
              display: block; 
