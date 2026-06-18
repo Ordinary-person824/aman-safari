@@ -119,60 +119,55 @@
       
 <br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div> </center>
 <style>
-#kili-chat-btn {
+<!-- Kili Chatbot Start -->
+<style>
+.aman-chat-btn {
   position: fixed; bottom: 20px; right: 20px;
   background: #0F4C3A; color: white; border: none;
   padding: 15px 20px; border-radius: 50px; font-size: 16px;
   cursor: pointer; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-#kili-chat-box {
+.aman-chat-box {
   display: none; position: fixed; bottom: 90px; right: 20px;
-  width: 320px; height: 450px; background: white; border-radius: 15px;
+  width: 320px; background: white; border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 9999; 
-  flex-direction: column; font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
-#kili-chat-header {
+.aman-header {
   background: #0F4C3A; color: white; padding: 15px; 
   border-radius: 15px 15px 0 0; font-weight: bold;
 }
-#kili-chat-messages {
-  flex: 1; padding: 15px; overflow-y: auto; font-size: 14px;
+.aman-body {
+  padding: 15px; font-size: 14px; max-height: 350px; overflow-y: auto;
 }
-.kili-bot-msg { 
+.aman-msg { 
   background: #f1f1f1; padding: 10px; border-radius: 10px; 
-  margin: 5px 0; max-width: 80%;
+  margin: 5px 0; max-width: 90%;
 }
-.kili-user-msg { 
-  background: #DCF8C6; padding: 10px; border-radius: 10px; 
-  margin: 5px 0; max-width: 80%; margin-left: auto; text-align: right;
+.aman-question {
+  background: #DCF8C6; margin-left: auto; text-align: right;
 }
-#kili-chat-input-area {
-  display: flex; padding: 10px; border-top: 1px solid #ddd;
-}
-#kili-chat-input {
-  flex: 1; padding: 10px; border: 1px solid #ddd; 
-  border-radius: 20px; outline: none;
-}
-#kili-chat-send {
-  background: #0F4C3A; color: white; border: none; 
-  padding: 10px 15px; margin-left: 5px; border-radius: 50%;
-  cursor: pointer;
+.aman-btn { 
+  display: block; width: 100%; background: #0F4C3A; color: white; 
+  border: none; padding: 10px; margin: 5px 0; border-radius: 8px; 
+  cursor: pointer; text-align: left;
 }
 </style>
-     <button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI</button>
+
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Climb Kili?</button>
 
 <div class="aman-chat-box" id="amanBox">
   <div class="aman-header">
-    Aman AI - Safari Guide
+    Aman AI - Kilimanjaro Guide
     <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
   </div>
   <div class="aman-body" id="amanChat">
-    <div class="aman-msg">Hi! I'm Aman AI. Ask me about Serengeti 👇</div>
-    <button class="aman-btn" onclick="askAman('price')">💰 How much does it cost?</button>
+    <div class="aman-msg">Hi! I'm Aman AI. Ask me about Kilimanjaro 👇</div>
+    <button class="aman-btn" onclick="askAman('price')">💰 How much to climb?</button>
+    <button class="aman-btn" onclick="askAman('routes')">🏔️ Which route is best?</button>
     <button class="aman-btn" onclick="askAman('days')">📅 How many days needed?</button>
-    <button class="aman-btn" onclick="askAman('migration')">🦓 Best time for migration?</button>
+    <button class="aman-btn" onclick="askAman('season')">☀️ Best time to climb?</button>
     <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat with human Aman</button>
-    <button class="aman-btn" onclick="askAman('payment')">💳 How do I pay?</button>
   </div>
 </div>
 
@@ -189,22 +184,23 @@ function toggleAman() {
 function askAman(topic) {
   var chat = document.getElementById('amanChat');
   var answers = {
-    price: "Serengeti: $350-600 per day. Includes guide, car, park fees, meals. Camping saves 40%.",
-    days: "3 days minimum. 4-5 days ideal for migration + big cats. Less than 3 = rushed.",
-    migration: "Jan-Mar: South. Jun-Jul: West. Aug-Oct: North Kenya border. Use predictor above!",
+    price: "Kilimanjaro: $1800-2800 for 6-8 days. Includes guide, porters, park fees, meals, tents. Machame route most popular.",
+    routes: "Machame: Scenic, 6-7 days. Marangu: Huts, 5-6 days. Lemosho: Less crowded, 7-8 days. I recommend Machame for first-timers.",
+    days: "5 days minimum via Marangu. 6-7 days ideal via Machame for acclimatization. 8 days Lemosho = highest success rate.",
+    season: "Jan-Mar: Warm, less crowded. Jun-Oct: Dry season, busiest. Avoid Apr-May heavy rains.",
     whatsapp: "Opening WhatsApp to human Aman...",
-    payment: "30% deposit via wise or bank transfer to book. Rest cash on arrival in Arusha. I send you invoice with all details on Whatsapp. Safe and simple.",
   };
 
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
 
   if(topic === 'whatsapp') {
-    window.open('https://wa.me/255699004685?text=Hi%20Aman%20from%20your%20website', '_blank');
+    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Kilimanjaro%20inquiry%20from%20your%20website', '_blank');
   }
 
   chat.scrollTop = chat.scrollHeight;
 }
 </script>
+<!-- Kili Chatbot End -->
 </body>
 </htmL>
