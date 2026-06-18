@@ -168,7 +168,98 @@
          </p>
       <p align="center">
       <button style="background-color:orange;">Mt. Kilimanjaro</button>
-      </p></div>
+      </p>
+      <!-- Kili Best Time Widget Start -->
+<style>
+.aman-best-time {
+  max-width: 800px; margin: 40px auto; padding: 0 20px; font-family: Arial, sans-serif;
+}
+.aman-time-box {
+  background: #1a1a1a!important; color: white!important; padding: 25px!important;
+  border-radius: 10px!important; box-shadow: 0 4px 15px rgba(0,0,0,0.4)!important;
+}
+.aman-time-box h2 {
+  margin: 0 0 15px 0!important; font-size: 22px!important; color: white!important;
+}
+.aman-time-box h3 {
+  margin: 25px 0 15px 0!important; font-size: 20px!important; color: white!important;
+}
+.aman-time-box p {
+  margin: 8px 0!important; color: #ddd!important;
+}
+.aman-time-box select {
+  width: 100%!important; padding: 12px!important; border-radius: 6px!important;
+  border: none!important; font-size: 16px!important; margin: 10px 0!important;
+  background: white!important; color: #333!important;
+}
+.aman-result {
+  background: #0F4C3A!important; padding: 15px!important; border-radius: 8px!important;
+  margin-top: 15px!important; display: none;
+}
+.aman-result h4 {
+  margin: 0 0 8px 0!important; color: #DCF8C6!important;
+}
+</style>
+
+<div class="aman-best-time">
+  <div class="aman-time-box">
+    <h2>Contact Informations</h2>
+    <p>Location: Arusha, Tanzania</p>
+    <p>E-mail: aman.safaris@gmail.com</p>
+    <p>Phone/WhatsApp: +255 699 004 685</p>
+
+    <h3>When Is The Best Time To Visit Kilimanjaro?</h3>
+    <label style="color: #ccc; font-size: 14px;">Select your travel month:</label>
+    <select id="kiliMonth" onchange="showKiliTime()">
+      <option value="">-- Pick a month --</option>
+      <option value="jan">January</option>
+      <option value="feb">February</option>
+      <option value="mar">March</option>
+      <option value="apr">April</option>
+      <option value="may">May</option>
+      <option value="jun">June</option>
+      <option value="jul">July</option>
+      <option value="aug">August</option>
+      <option value="sep">September</option>
+      <option value="oct">October</option>
+      <option value="nov">November</option>
+      <option value="dec">December</option>
+    </select>
+
+    <div class="aman-result" id="kiliResult"></div>
+  </div>
+</div>
+
+<script>
+function showKiliTime() {
+  var month = document.getElementById('kiliMonth').value;
+  var result = document.getElementById('kiliResult');
+
+  var kiliData = {
+    jan: "<h4>January - EXCELLENT</h4>Warmest month on Kili. Clear mornings, good visibility. Less crowded than summer. Shoulder season pricing. Success rate: 85%+ on 7-day routes.",
+    feb: "<h4>February - BEST</h4>Driest and warmest month. Perfect weather. Peak season - book 4 months early. Highest summit success rates. Most expensive month.",
+    mar: "<h4>March - VERY GOOD</h4>Last month before long rains. Still warm and dry. Fewer crowds than Feb. Good deals available. Success rate: 80%+",
+    apr: "<h4>April - NOT RECOMMENDED</h4>Heavy long rains start. Muddy trails, poor visibility. Cold and wet. Many operators close. I don't run climbs this month for safety.",
+    may: "<h4>May - NOT RECOMMENDED</h4>Peak of long rains. Trails dangerous and slippery. Low visibility. Highest risk of altitude issues. We refund 100% if you book by mistake.",
+    jun: "<h4>June - GOOD</h4>Dry season starts. Cold but clear skies. Fewer crowds than July-Aug. Prices start rising. Great for budget climbers who want good weather.",
+    jul: "<h4>July - EXCELLENT</h4>Peak dry season. Coldest month but clearest skies. Busiest month of year. Book 5 months early. Amazing starry nights at high camps.",
+    aug: "<h4>August - BEST</h4>Peak dry season continues. Very cold at summit but no rain. Busiest + most expensive. 90%+ success rate on 8-day Lemosho. Book now!",
+    sep: "<h4>September - EXCELLENT</h4>End of dry season. Still cold and clear. Crowds start dropping. Best month for balance of weather + price + availability.",
+    oct: "<h4>October - VERY GOOD</h4>Last dry month before short rains. Warming up. Great deals as peak season ends. Still 80%+ success rates. My personal favorite month.",
+    nov: "<h4>November - FAIR</h4>Short rains begin mid-month. First 2 weeks OK, last 2 weeks wet. Cheapest month. Only for experienced hikers with good gear.",
+    dec: "<h4>December - GOOD</h4>Short rains end early Dec. Christmas week busy + expensive. Late Dec great weather. New Year summit is popular but very cold."
+  };
+
+  if(month) {
+    result.innerHTML = kiliData[month] + '<p style="margin-top:10px;"><strong>WhatsApp me:</strong> "KILI ' + month.toUpperCase() + '" to +255 699 004 685 for dates & prices</p>';
+    result.style.display = 'block';
+  } else {
+    result.style.display = 'none';
+  }
+}
+</script>
+<!-- Kili Best Time Widget End -->
+      </div>
       
 <br><br> <div style="background-color:#f1f1f1; padding:20px; margin-top:50px;"> <p style="color:#555;">Built by Ordinary-person824 in Mwanza, Tanzania © 2026</p> </div> </center>
       </body>      
