@@ -236,6 +236,8 @@
   <p><strong>Result: You save money. Guides earn more. Everyone wins.</strong></p>
 </div>
 
+     </div>
+
         <h2>Meet Your Lead Guide Team</h2>
         <div class="guide-card">
             <h3>Identity Confirmed After Deposit For Security</h3>
@@ -391,7 +393,7 @@ function showKiliTime() {
   z-index: 999; font-family: 'Lato', sans-serif;
 }
 .aman-header {
-  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; 
+  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0;
   font-weight: bold; font-size: 16px;
 }
 .aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
@@ -410,11 +412,11 @@ function showKiliTime() {
   display: none; padding: 10px; border-top: 1px solid #ddd;
 }
 .aman-input-area input {
-  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; 
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;
   font-size: 14px; margin-bottom: 8px;
 }
 .aman-send-btn {
-  background: #25D366; color: white; border: none; padding: 10px; 
+  background: #25D366; color: white; border: none; padding: 10px;
   width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
 </style>
@@ -458,16 +460,16 @@ function askAman(topic) {
     difference: "VIATOR: $3300, you never meet guide, 20% goes to USA company. US: $2495, you chat direct with Aman + Masawe, 90% stays in Tanzania to pay guides/porters. Same mountain, same safety, but $800 cheaper + you support locals. Easy choice.",
     human: "Connecting you to Human Aman... He replies after 4PM Mon-Fri, within 1 hour on weekends. FOR FASTEST QUOTE: Type your DATES + #PEOPLE + ROUTE below and click Send. This goes straight to his WhatsApp."
   };
-  
+
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-  
+
   if(topic === 'human' || topic === 'book' || topic === 'quote') {
     inputArea.style.display = 'block';
   } else {
     inputArea.style.display = 'none';
   }
-  
+
   chat.scrollTop = chat.scrollHeight;
 }
 
@@ -494,22 +496,27 @@ function sendToWhatsApp() {
 </div>
 
 <script>
+// Exit popup script
 document.addEventListener('mouseleave', function(e) {
-  if(e.clientY < 0 && !sessionStorage.getItem('popupShown')) {
+  if(e.clientY < 0 &&!sessionStorage.getItem('popupShown')) {
     document.getElementById('exitPopup').style.display = 'block';
     sessionStorage.setItem('popupShown', 'true');
   }
 });
-<script>
+
+// Currency converter script - FIXED
 function convertCurrency(curr) {
   const rates = {USD: 1, GBP: 0.79, EUR: 0.92};
   const basePrice = 2495;
-  const converted = Math.round(basePrice * rates);
+  const converted = Math.round(basePrice * rates[curr]);
   const symbols = {USD: '$', GBP: '£', EUR: '€'};
-  document.getElementById('price').innerText = symbols + converted + ' per person';
-  
-  // Make clicked button look active
-  document.querySelectorAll('.curr-btn').forEach(btn => btn.style.background = '#0B3D20');
+  document.getElementById('price').innerText = symbols[curr] + converted + ' per person';
+
+  // Highlight active button
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.style.background = '#0B3D20';
+    btn.style.color = 'white';
+  });
   event.target.style.background = '#D4AF37';
   event.target.style.color = '#0B3D20';
 }
