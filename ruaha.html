@@ -255,6 +255,48 @@
     <div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
         <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
     </div>
+     <h2>When Is The Best Time To Visit Ruaha?</h2>
+<div style="background:rgba(255,255,255,0.1); padding:20px; border-radius:10px; margin:20px 0;">
+  <label style="color:white; font-weight:bold;">Select your travel month:</label><br>
+  <select id="month" onchange="showRuaha()" style="padding:10px; margin:10px 0; border-radius:5px; width:100%; max-width:300px;">
+    <option value="">-- Pick a month --</option>
+    <option value="jan">January</option>
+    <option value="feb">February</option>
+    <option value="mar">March</option>
+    <option value="apr">April</option>
+    <option value="may">May</option>
+    <option value="jun">June</option>
+    <option value="jul">July</option>
+    <option value="aug">August</option>
+    <option value="sep">September</option>
+    <option value="oct">October</option>
+    <option value="nov">November</option>
+    <option value="dec">December</option>
+  </select>
+  <div id="ruaha-result" style="color:#FFD700; font-size:18px; margin-top:15px; font-weight:bold;"></div>
+</div>
+
+<script>
+function showRuaha() {
+  const month = document.getElementById('month').value;
+  const result = document.getElementById('ruaha-result');
+  const data = {
+    jan: "🌧️ Green season starts. Lush landscape, baby animals, amazing birding. Some roads muddy but beautiful.",
+    feb: "🌧️ Green season. Best bird watching with 570+ species. Elephants spread out in the bush.",
+    mar: "🌧️ Peak rains. Fewer tourists = lowest prices. Great for photography of green landscapes.",
+    apr: "🌧️ Heavy rains. Many camps closed. Best for budget travelers who don't mind rain.",
+    may: "🌤️ Rains ending. Park is green and fresh. Wildlife starts moving back to the river.",
+    jun: "☀️ Dry season begins! Wildlife heads to Great Ruaha River. Elephants gather in huge herds.",
+    jul: "☀️ PEAK SEASON. Perfect weather. Massive elephant herds at the river. Lions everywhere.",
+    aug: "☀️ PEAK SEASON. Bone dry = all animals at the river. Best game viewing of the year.",
+    sep: "☀️ PEAK SEASON. Very hot and dry. Incredible predator action around water sources.",
+    oct: "☀️ Hottest month. Animals desperate for water = guaranteed sightings at the river.",
+    nov: "🌦️ Short rains begin. Dust settles, park turns green again. Good mix of weather + wildlife.",
+    dec: "🌦️ Short rains. Green and beautiful. Baby animals born. Perfect for photos."
+  };
+  result.innerHTML = data[month] || "";
+}
+</script>
 
 <!-- Aman Chatbot Start -->
 <style>
