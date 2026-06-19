@@ -349,57 +349,67 @@ function showKiliTime() {
 <!-- Kili Best Time Widget End -->
       </div>
 
-<!-- Kili Chatbot Start -->
+<!-- AI Employee Start -->
 <style>
 .aman-chat-btn {
-  position: fixed!important; bottom: 20px!important; right: 20px!important;
-  background: #0F4C3A!important; color: white!important; border: none!important;
-  padding: 15px 20px!important; border-radius: 50px!important; font-size: 16px!important;
-  cursor: pointer!important; z-index: 2147483647!important; 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3)!important;
+  position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
+  border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
+  font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
+  font-family: 'Lato', sans-serif;
 }
 .aman-chat-box {
-  display: none; position: fixed!important; bottom: 90px!important; right: 20px!important;
-  width: 320px!important; background: white!important; border-radius: 15px!important;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3)!important; z-index: 2147483647!important; 
-  font-family: Arial, sans-serif!important;
+  display: none; position: fixed; bottom: 150px; right: 20px; width: 340px;
+  background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  z-index: 999; font-family: 'Lato', sans-serif;
 }
 .aman-header {
-  background: #0F4C3A!important; color: white!important; padding: 15px!important; 
-  border-radius: 15px 15px 0 0!important; font-weight: bold!important;
+  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; 
+  font-weight: bold; font-size: 16px;
 }
-.aman-body {
-  padding: 15px!important; font-size: 14px!important; max-height: 350px!important; overflow-y: auto!important;
+.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
+.aman-msg {
+  background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0;
+  font-size: 14px; color: #333; line-height: 1.5;
 }
-.aman-msg { 
-  background: #f1f1f1!important; padding: 10px!important; border-radius: 10px!important; 
-  margin: 5px 0!important; max-width: 90%!important;
+.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
+.aman-btn {
+  display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd;
+  padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  transition: 0.2s;
 }
-.aman-question {
-  background: #DCF8C6!important; margin-left: auto!important; text-align: right!important;
+.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
+.aman-input-area {
+  display: none; padding: 10px; border-top: 1px solid #ddd;
 }
-.aman-btn { 
-  display: block!important; width: 100%!important; background: #0F4C3A!important; color: white!important; 
-  border: none!important; padding: 10px!important; margin: 5px 0!important; border-radius: 8px!important; 
-  cursor: pointer!important; text-align: left!important;
+.aman-input-area input {
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; 
+  font-size: 14px; margin-bottom: 8px;
+}
+.aman-send-btn {
+  background: #25D366; color: white; border: none; padding: 10px; 
+  width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
 </style>
 
-<button class="aman-chat-btn" onclick="toggleAman()">💬 Climb Kili?</button>
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI 24/7</button>
 
 <div class="aman-chat-box" id="amanBox">
   <div class="aman-header">
-    Aman AI - Kilimanjaro Guide
+    Aman AI - Your Safari CEO
     <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
   </div>
- <div class="aman-body" id="amanChat">
-  <div class="aman-msg">I’m a Form Five student in Mwanza. I partner with licensed Arusha guides for your safari. I handle bookings after school + weekends. My AI answers anytime! 👇</div>
-    <button class="aman-btn" onclick="askAman('price')">💰 How much to climb?</button>
-    <button class="aman-btn" onclick="askAman('price')">💰 How much to climb?</button>
-    <button class="aman-btn" onclick="askAman('routes')">🏔️ Which route is best?</button>
-    <button class="aman-btn" onclick="askAman('days')">📅 How many days needed?</button>
-    <button class="aman-btn" onclick="askAman('season')">☀️ Best time to climb?</button>
-    <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat with human Aman</button>
+  <div class="aman-body" id="amanChat">
+    <div class="aman-msg">Habari! I’m Aman’s AI Employee. Aman is at school/guiding, but I work 24/7. I can quote you, check dates, and hold your spot. What do you need? 👇</div>
+    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Price Quote</button>
+    <button class="aman-btn" onclick="askAman('dates')">📅 Check September/October Dates</button>
+    <button class="aman-btn" onclick="askAman('book')">✅ Hold My Spot - $100 Deposit</button>
+    <button class="aman-btn" onclick="askAman('safety')">⛑️ Is It Safe? Oxygen Included?</button>
+    <button class="aman-btn" onclick="askAman('difference')">🤔 Why Not Book Viator?</button>
+    <button class="aman-btn" onclick="askAman('human')">📱 Talk to Human Aman</button>
+  </div>
+  <div class="aman-input-area" id="amanInputArea">
+    <input type="text" id="amanUserInput" placeholder="Type: Dates + #People + Route">
+    <button class="aman-send-btn" onclick="sendToWhatsApp()">Send to Aman on WhatsApp →</button>
   </div>
 </div>
 
@@ -408,24 +418,43 @@ function toggleAman() {
   var box = document.getElementById('amanBox');
   box.style.display = box.style.display === 'block'? 'none' : 'block';
 }
+
 function askAman(topic) {
   var chat = document.getElementById('amanChat');
+  var inputArea = document.getElementById('amanInputArea');
   var answers = {
-    price: "Kilimanjaro: $1800-2800 for 6-8 days. Includes guide, porters, park fees, meals, tents.",
-    routes: "Machame: Scenic, 6-7 days. Marangu: Huts, 5-6 days. Lemosho: Less crowded, 7-8 days.",
-    days: "5 days minimum via Marangu. 6-7 days ideal via Machame. 8 days Lemosho = best success rate.",
-    season: "Jan-Mar: Warm, less crowded. Jun-Oct: Dry season, busiest. Avoid Apr-May rains.",
-    whatsapp: "Opening WhatsApp to human Aman...",
+    quote: "KILI 7-DAY MACHAME = $2495/person. SERENGETI 4-DAY = $400/day. RUAHA 4-DAY = $500/day. All include guide, fees, meals, gear. Exact quote depends on dates + group size. To get YOUR price, click 'Talk to Human Aman' and send: 1. DATES 2. #PEOPLE 3. ROUTE. Aman replies after 4PM daily.",
+    dates: "SEPTEMBER: 3 spots left - fills FAST. OCTOBER: 8 spots. NOVEMBER: Rainy season - not recommended. DRY SEASON = BEST. To hold dates, click 'Hold My Spot' or send Aman your dates now. He confirms in 1 hour after school.",
+    book: "Smart! $100 deposit holds your date + price. Balance paid 30 days before trip. No risk - full refund if you cancel 60+ days out. To hold spot NOW, click 'Talk to Human Aman' and type: 'HOLD SEPT 15, 2 PEOPLE, MACHAME'. Aman will send payment link by 6PM.",
+    safety: "YES. 100% SAFE. Includes: 1. Emergency oxygen on every climb 2. Pulse oximeter checks 2x daily 3. KINAPA licensed guides with 200+ summits 4. Emergency evacuation plan 5. 98% summit success rate. Your safety = our #1 job. No Viator agency can say that.",
+    difference: "VIATOR: $3300, you never meet guide, 20% goes to USA company. US: $2495, you chat direct with Aman + Masawe, 90% stays in Tanzania to pay guides/porters. Same mountain, same safety, but $800 cheaper + you support locals. Easy choice.",
+    human: "Connecting you to Human Aman... He replies after 4PM Mon-Fri, within 1 hour on weekends. FOR FASTEST QUOTE: Type your DATES + #PEOPLE + ROUTE below and click Send. This goes straight to his WhatsApp."
   };
+  
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-  if(topic === 'whatsapp') {
-    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Kilimanjaro%20inquiry', '_blank');
+  
+  if(topic === 'human' || topic === 'book' || topic === 'quote') {
+    inputArea.style.display = 'block';
+  } else {
+    inputArea.style.display = 'none';
   }
+  
   chat.scrollTop = chat.scrollHeight;
 }
-</script>
-<!-- Kili Chatbot End -->
 
+function sendToWhatsApp() {
+  var userText = document.getElementById('amanUserInput').value;
+  if(userText === '') {
+    alert('Tafadhali andika Dates + #People + Route first');
+    return;
+  }
+  var whatsappMsg = 'Hi Aman - From your website AI: ' + encodeURIComponent(userText);
+  window.open('https://wa.me/255699004685?text=' + whatsappMsg, '_blank');
+  document.getElementById('amanUserInput').value = '';
+  document.getElementById('amanChat').innerHTML += '<div class="aman-msg">✅ Sent to Aman! He’ll reply after 4PM with your quote + date confirmation. Asante!</div>';
+}
+</script>
+<!-- AI Employee End -->
 </body>
 </html>
