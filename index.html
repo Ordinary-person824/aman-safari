@@ -502,11 +502,16 @@ document.addEventListener('mouseleave', function(e) {
 });
 <script>
 function convertCurrency(curr) {
-  const rates = {USD:1, GBP:0.79, EUR:0.92};
+  const rates = {USD: 1, GBP: 0.79, EUR: 0.92};
   const basePrice = 2495;
-  const converted = Math.round(basePrice * rates[curr]);
+  const converted = Math.round(basePrice * rates);
   const symbols = {USD: '$', GBP: '£', EUR: '€'};
-  document.getElementById('price').innerText = symbols[curr] + converted + ' per person';
+  document.getElementById('price').innerText = symbols + converted + ' per person';
+  
+  // Make clicked button look active
+  document.querySelectorAll('.curr-btn').forEach(btn => btn.style.background = '#0B3D20');
+  event.target.style.background = '#D4AF37';
+  event.target.style.color = '#0B3D20';
 }
 </script>
 </body>
