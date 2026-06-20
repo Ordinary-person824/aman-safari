@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serengeti Safari Direct | See Great Migration | Book Local Guides</title>
-    <meta name="description" content="Serengeti safaris with licensed Arusha guides. Save 40% vs Viator. Witness Great Migration. No middlemen. Direct booking.">
+    <title>Serengeti Safari $450/day | See Great Migration | Save 40% vs Viator</title>
+    <meta name="description" content="Serengeti safaris direct. Witness 2M wildebeest migration. Licensed Arusha guides. No middlemen. 4x4 Land Cruisers. WhatsApp now.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;700&display=swap');
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
+
+        body {
             font-family: 'Lato', sans-serif;
-            background-image: url('serengeti.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
+            background-image: url('serengeti.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
         }
-        
+
         body::before {
             content: '';
             position: fixed;
@@ -26,7 +26,7 @@
             background: rgba(0,0,0,0.65);
             z-index: -1;
         }
-        
+
         nav {
             background: rgba(11, 61, 32, 0.9);
             padding: 15px;
@@ -37,7 +37,7 @@
             z-index: 100;
             border-bottom: 2px solid #D4AF37;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
@@ -48,20 +48,20 @@
             border-radius: 20px;
             transition: 0.3s;
         }
-        
-        nav a:hover, nav a.active { 
+
+        nav a:hover, nav a.active {
             background: #D4AF37;
             color: #0B3D20;
         }
-        
-       .hero {
+
+      .hero {
             max-width: 900px;
             margin: 60px auto 30px;
             padding: 40px 20px;
             text-align: center;
         }
-        
-       .hero h1 {
+
+      .hero h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: clamp(32px, 6vw, 56px);
@@ -69,16 +69,16 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
         }
-        
-       .hero.highlight { color: #D4AF37; }
-        
-       .hero p {
+
+      .hero.highlight { color: #D4AF37; }
+
+      .hero p {
             font-size: 20px;
             margin-bottom: 30px;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
-        
-       .cta-btn {
+
+      .cta-btn {
             background: linear-gradient(135deg, #D4AF37, #B8941F);
             color: #0B3D20;
             padding: 18px 40px;
@@ -93,13 +93,13 @@
             transition: 0.3s;
             font-family: 'Montserrat', sans-serif;
         }
-        
-       .cta-btn:hover {
+
+      .cta-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
         }
-        
-       .content {
+
+      .content {
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(8px);
             padding: 40px 20px;
@@ -108,8 +108,8 @@
             border-radius: 15px;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        
-       .content h2 {
+
+      .content h2 {
             font-family: 'Montserrat', sans-serif;
             color: #D4AF37;
             font-size: 28px;
@@ -117,12 +117,12 @@
             border-left: 4px solid #D4AF37;
             padding-left: 15px;
         }
-        
-       .content h3 { color: #D4AF37; margin: 20px 0 10px; }
-       .content p,.content li { line-height: 1.8; font-size: 17px; }
-       .content strong { color: #D4AF37; }
-        
-       .urgent-box {
+
+      .content h3 { color: #D4AF37; margin: 20px 0 10px; }
+      .content p,.content li { line-height: 1.8; font-size: 17px; }
+      .content strong { color: #D4AF37; }
+
+      .urgent-box {
             background: linear-gradient(135deg, #8B0000, #DC143C);
             padding: 20px;
             border-radius: 10px;
@@ -130,16 +130,24 @@
             text-align: center;
             border: 2px solid #FFD700;
         }
-        
-       .price-box {
+
+      .price-box {
             background: rgba(212, 175, 55, 0.15);
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
             border-left: 4px solid #D4AF37;
         }
-        
-       .whatsapp-float {
+
+      .guide-card {
+            background: rgba(11, 61, 32, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 1px solid #D4AF37;
+        }
+
+      .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -153,21 +161,21 @@
             z-index: 1000;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
-       .migration-widget {
+
+      .migration-widget {
             background: rgba(11, 61, 32, 0.6);
             padding: 25px;
             border-radius: 10px;
             margin: 25px 0;
             border: 1px solid #D4AF37;
         }
-        
-       .migration-widget select {
+
+      .migration-widget select {
             width: 100%;
             padding: 12px;
             border-radius: 8px;
@@ -177,8 +185,8 @@
             background: white;
             color: #333;
         }
-        
-       .migration-result {
+
+      .migration-result {
             background: rgba(212, 175, 55, 0.2);
             padding: 15px;
             border-radius: 8px;
@@ -188,10 +196,10 @@
             font-weight: bold;
             display: none;
         }
-        
-        @media (max-width: 600px) { 
+
+        @media (max-width: 600px) {
             nav a { display: block; margin: 8px 0; }
-           .hero { margin-top: 30px; }
+          .hero { margin-top: 30px; }
         }
     </style>
 </head>
@@ -223,6 +231,12 @@
 
         <h2>Why Are We 40% Cheaper Than Viator?</h2>
         <div class="price-box">
+            <h3 id="price" style="color:#D4AF37;font-size:32px;margin-bottom:15px;text-align:center">$450 per day</h3>
+            <div style="text-align:center;margin-bottom:20px">
+                <button onclick="convertCurrency('USD')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#D4AF37;color:#0B3D20">$ USD</button>
+                <button onclick="convertCurrency('GBP')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#0B3D20;color:white">£ GBP</button>
+                <button onclick="convertCurrency('EUR')" class="curr-btn" style="margin:2px;padding:8px 16px;border:1px solid #D4AF37;border-radius:6px;cursor:pointer;background:#0B3D20;color:white">€ EUR</button>
+            </div>
             <p>❌ We DON’T pay 35% commission to SafariBooking.com</p>
             <p>❌ We DON’T have offices in Europe or USA</p>
             <p>✅ You pay your guide DIRECT through our registered TZ company</p>
@@ -230,15 +244,17 @@
             <p><strong>Result: You save $800. Guides earn more. Wildlife benefits.</strong></p>
         </div>
 
-        <h2>The Great Migration - Nature's Greatest Show</h2>
-        <p>Every year, <strong>2 million wildebeest + 500,000 zebras</strong> move in a 1,800-mile loop through Serengeti.</p>
-        <p>✓ <strong>River Crossings:</strong> Watch crocodiles hunt at Grumeti + Mara Rivers</p>
-        <p>✓ <strong>Calving Season:</strong> 8,000 babies born DAILY in Jan-Feb</p>
-        <p>✓ <strong>Big Cats:</strong> Lions, cheetahs, leopards follow the herds</p>
-        <p>✓ <strong>The Big Five:</strong> Lion, Leopard, Elephant, Rhino, Buffalo - all here</p>
+        <div class="guide-card">
+            <h2>The Great Migration - Nature's Greatest Show</h2>
+            <p>Every year, <strong>2 million wildebeest + 500,000 zebras</strong> move in a 1,800-mile loop through Serengeti.</p>
+            <p>✓ <strong>River Crossings:</strong> Watch crocodiles hunt at Grumeti + Mara Rivers</p>
+            <p>✓ <strong>Calving Season:</strong> 8,000 babies born DAILY in Jan-Feb</p>
+            <p>✓ <strong>Big Cats:</strong> Lions, cheetahs, leopards follow the herds</p>
+            <p>✓ <strong>The Big Five:</strong> Lion, Leopard, Elephant, Rhino, Buffalo - all here</p>
+        </div>
 
-        <h2>When Is The Best Time To See The Great Migration?</h2>
         <div class="migration-widget">
+            <h2>When Is The Best Time To See The Great Migration?</h2>
             <label style="color:#D4AF37; font-weight:bold;">Select your travel month:</label><br>
             <select id="month" onchange="showMigration()">
                 <option value="">-- Pick a month --</option>
@@ -258,78 +274,99 @@
             <div class="migration-result" id="migration-result"></div>
         </div>
 
-        <h2>What Your Price Includes - No Hidden Fees</h2>
-        <p><strong>$350-600 per day covers EVERYTHING:</strong></p>
-        <p>• 4x4 Safari Land Cruiser with pop-up roof</p>
-        <p>• Professional English-speaking guide</p>
-        <p>• All park fees $70/day paid direct to TANAPA</p>
-        <p>• 3 meals daily + bottled water</p>
-        <p>• Camping equipment OR lodge accommodation</p>
-        <p><strong>Camping saves 40% vs lodges.</strong> We recommend 4-5 days minimum.</p>
+        <div class="guide-card">
+            <h2>What Your Price Includes - No Hidden Fees</h2>
+            <p><strong>$350-600 per day covers EVERYTHING:</strong></p>
+            <p>• 4x4 Safari Land Cruiser with pop-up roof</p>
+            <p>• Professional English-speaking guide</p>
+            <p>• All park fees $70/day paid direct to TANAPA</p>
+            <p>• 3 meals daily + bottled water</p>
+            <p>• Camping equipment OR lodge accommodation</p>
+            <p><strong>Camping saves 40% vs lodges.</strong> We recommend 4-5 days minimum.</p>
+        </div>
 
-        <h2>Why Book Direct With Us</h2>
-        <p><strong>Big sites take 35% commission.</strong> That money never reaches your guide, driver, or cook.</p>
-        <p>✓ <strong>100% stays in Tanzania</strong> - Support local families</p>
-        <p>✓ <strong>Better guides</strong> - We pay them more, they work harder for you</p>
-        <p>✓ <strong>Flexible</strong> - Change dates, add days, custom routes</p>
-        <p>✓ <strong>Safe</strong> - All payments to registered TZ company account</p>
+        <div class="guide-card">
+            <h2>Why Book Direct With Us</h2>
+            <p><strong>Big sites take 35% commission.</strong> That money never reaches your guide, driver, or cook.</p>
+            <p>✓ <strong>100% stays in Tanzania</strong> - Support local families</p>
+            <p>✓ <strong>Better guides</strong> - We pay them more, they work harder for you</p>
+            <p>✓ <strong>Flexible</strong> - Change dates, add days, custom routes</p>
+            <p>✓ <strong>Safe</strong> - All payments to registered TZ company account</p>
+        </div>
 
-        <h2 id="contact">Contact Direct - No Agencies</h2>
-        <p><strong>WhatsApp:</strong> +255 699 004 685 - Fastest reply</p>
-        <p><strong>Email:</strong> amannelson824@gmail.com</p>
-        <p><strong>Location:</strong> Mwanza, Tanzania | Licensed Tour Operator</p>
-        <p><em>I’m Aman. I partner with licensed Arusha guides. I handle bookings after school. You get direct local prices with zero middleman fees.</em></p>
+        <div class="guide-card">
+            <h2 id="contact">Contact Direct - No Agencies</h2>
+            <p><strong>WhatsApp:</strong> +255 699 004 685 - Fastest reply</p>
+            <p><strong>Email:</strong> amannelson824@gmail.com</p>
+            <p><strong>Location:</strong> Mwanza, Tanzania | Licensed Tour Operator</p>
+            <p><em>I’m Aman. I partner with licensed Arusha guides. I handle bookings after school. You get direct local prices with zero middleman fees.</em></p>
+        </div>
     </div>
 
     <a href="https://wa.me/255699004685" class="whatsapp-float">
         💬 Chat About Migration 24/7
     </a>
 
-    <div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
-        <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
-    </div>
-
-<!-- Aman Chatbot Start -->
+<!-- AI Employee Start -->
 <style>
 .aman-chat-btn {
   position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
   border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
   font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
+  font-family: 'Lato', sans-serif;
 }
 .aman-chat-box {
-  display: none; position: fixed; bottom: 150px; right: 20px; width: 320px;
+  display: none; position: fixed; bottom: 150px; right: 20px; width: 340px;
   background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
   z-index: 999; font-family: 'Lato', sans-serif;
 }
 .aman-header {
-  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; font-weight: bold;
+  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0;
+  font-weight: bold; font-size: 16px;
 }
-.aman-body { padding: 15px; max-height: 400px; overflow-y: auto; }
+.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
 .aman-msg {
-  background: #f1f1f1; padding: 10px; border-radius: 10px; margin: 8px 0;
-  font-size: 14px; color: #333;
+  background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0;
+  font-size: 14px; color: #333; line-height: 1.5;
 }
-.aman-question { background: #DCF8C6; text-align: right; margin-left: 40px; }
+.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
 .aman-btn {
   display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd;
-  padding: 10px; margin: 5px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  transition: 0.2s;
+}
+.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
+.aman-input-area {
+  display: none; padding: 10px; border-top: 1px solid #ddd;
+}
+.aman-input-area input {
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;
+  font-size: 14px; margin-bottom: 8px;
+}
+.aman-send-btn {
+  background: #25D366; color: white; border: none; padding: 10px;
+  width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
 </style>
 
-<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI</button>
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI 24/7</button>
 
 <div class="aman-chat-box" id="amanBox">
   <div class="aman-header">
-    Aman AI - Safari Guide
+    Aman AI - Safari Specialist
     <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
   </div>
   <div class="aman-body" id="amanChat">
-  <div class="aman-msg">I’m Aman. I partner with licensed Arusha guides. I handle bookings after school + weekends. My AI answers anytime! 👇</div>
-    <button class="aman-btn" onclick="askAman('price')">💰 Safari prices?</button>
-    <button class="aman-btn" onclick="askAman('days')">📅 How many days?</button>
-    <button class="aman-btn" onclick="askAman('migration')">🦓 Best migration time?</button>
-    <button class="aman-btn" onclick="askAman('whatsapp')">📱 Chat human Aman</button>
-    <button class="aman-btn" onclick="askAman('payment')">💳 How to pay?</button>
+    <div class="aman-msg">Habari! I’m Aman’s AI Employee. Aman is at school/guiding, but I work 24/7. I can quote you, check dates, and hold your spot for Serengeti. What do you need? 👇</div>
+    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Safari Price Quote</button>
+    <button class="aman-btn" onclick="askAman('dates')">📅 Check Migration Dates</button>
+    <button class="aman-btn" onclick="askAman('book')">✅ Hold My Spot - $100 Deposit</button>
+    <button class="aman-btn" onclick="askAman('days')">📍 How many days needed?</button>
+    <button class="aman-btn" onclick="askAman('human')">📱 Talk to Human Aman</button>
+  </div>
+  <div class="aman-input-area" id="amanInputArea">
+    <input type="text" id="amanUserInput" placeholder="Type: Dates + #People + #Days">
+    <button class="aman-send-btn" onclick="sendToWhatsApp()">Send to Aman on WhatsApp →</button>
   </div>
 </div>
 
@@ -338,22 +375,46 @@ function toggleAman() {
   var box = document.getElementById('amanBox');
   box.style.display = box.style.display === 'block'? 'none' : 'block';
 }
+
 function askAman(topic) {
   var chat = document.getElementById('amanChat');
+  var inputArea = document.getElementById('amanInputArea');
   var answers = {
-    price: "Serengeti: $350-600 per day. Includes guide, 4x4, park fees, meals. Camping saves 40% vs lodges.",
-    days: "3 days minimum. 4-5 days ideal for migration + big cats. Less than 3 = rushed.",
-    migration: "Jan-Mar: South calving. Jun-Jul: West Grumeti. Aug-Oct: North Mara River. Use predictor above!",
-    whatsapp: "Opening WhatsApp to human Aman...",
-    payment: "30% deposit via Wise/bank to book. Rest cash on arrival in Arusha. Safe + simple.",
+    quote: "SERENGETI 4-DAY SAFARI = $450/day per person. All include guide, 4x4, park fees, meals, camping/lodge. Exact quote depends on dates + group size. To get YOUR price, click 'Talk to Human Aman' and send: 1. DATES 2. #PEOPLE 3. #DAYS. Aman replies after 4PM daily.",
+    dates: "July-Aug: Mara River crossings - PEAK. Jan-Feb: Calving season - predator action. Books out 6 months early. Use migration predictor above! To hold dates, click 'Hold My Spot' or send Aman your dates now.",
+    book: "Smart! $100 deposit holds your date + price. Balance paid 30 days before trip. No risk - full refund if you cancel 60+ days out. To hold spot NOW, click 'Talk to Human Aman' and type: 'HOLD JULY 15, 2 PEOPLE, 4 DAYS SERENGETI'. Aman will send payment link by 6PM.",
+    days: "3 days minimum for Serengeti. 4-5 days ideal for migration + big cats. Less than 3 = rushed. 1 day = Ngorongoro only.",
+    human: "Connecting you to Human Aman... He replies after 4PM Mon-Fri, within 1 hour on weekends. FOR FASTEST QUOTE: Type your DATES + #PEOPLE + #DAYS below and click Send. This goes straight to his WhatsApp."
   };
+
   chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
   chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-  if(topic === 'whatsapp') {
-    window.open('https://wa.me/255699004685?text=Hi%20Aman%20-%20Serengeti%20safari%20inquiry', '_blank');
+
+  if(topic === 'human' || topic === 'book' || topic === 'quote') {
+    inputArea.style.display = 'block';
+  } else {
+    inputArea.style.display = 'none';
   }
+
   chat.scrollTop = chat.scrollHeight;
 }
+
+function sendToWhatsApp() {
+  var userText = document.getElementById('amanUserInput').value;
+  if(userText === '') {
+    alert('Tafadhali andika Dates + #People + #Days first');
+    return;
+  }
+  var whatsappMsg = 'Hi Aman - From your Serengeti website AI: ' + encodeURIComponent(userText);
+  window.open('https://wa.me/255699004685?text=' + whatsappMsg, '_blank');
+  document.getElementById('amanUserInput').value = '';
+  document.getElementById('amanChat').innerHTML += '<div class="aman-msg">✅ Sent to Aman! He’ll reply after 4PM with your quote + date confirmation. Asante!</div>';
+}
+</script>
+<!-- AI Employee End -->
+
+<script>
+// Migration selector script
 function showMigration() {
   const month = document.getElementById('month').value;
   const result = document.getElementById('migration-result');
@@ -378,7 +439,27 @@ function showMigration() {
     result.style.display = 'none';
   }
 }
+
+// Currency converter script - FIXED
+function convertCurrency(curr) {
+  const rates = {USD: 1, GBP: 0.79, EUR: 0.92};
+  const basePrice = 450;
+  const converted = Math.round(basePrice * rates);
+  const symbols = {USD: '$', GBP: '£', EUR: '€'};
+  document.getElementById('price').innerText = symbols + converted + ' per day';
+
+  // Highlight active button
+  document.querySelectorAll('.curr-btn').forEach(btn => {
+    btn.style.background = '#0B3D20';
+    btn.style.color = 'white';
+  });
+  event.target.style.background = '#D4AF37';
+  event.target.style.color = '#0B3D20';
+}
 </script>
-<!-- Aman Chatbot End -->
+
+<div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
+    <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
+</div>
 </body>
 </html>
