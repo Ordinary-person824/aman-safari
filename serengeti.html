@@ -444,9 +444,9 @@ function showMigration() {
 function convertCurrency(curr) {
   const rates = {USD: 1, GBP: 0.79, EUR: 0.92};
   const basePrice = 450;
-  const converted = Math.round(basePrice * rates);
+  const converted = Math.round(basePrice * rates[curr]);
   const symbols = {USD: '$', GBP: '£', EUR: '€'};
-  document.getElementById('price').innerText = symbols + converted + ' per day';
+  document.getElementById('price').innerText = symbols[curr] + converted + ' per day';
 
   // Highlight active button
   document.querySelectorAll('.curr-btn').forEach(btn => {
@@ -457,9 +457,5 @@ function convertCurrency(curr) {
   event.target.style.color = '#0B3D20';
 }
 </script>
-
-<div style="background:#0B3D20; padding:20px; text-align:center; margin-top:50px;">
-    <p style="color:#D4AF37;">© 2026 Kilimanjaro Direct | Licensed Tanzania Tour Operator</p>
-</div>
 </body>
 </html>
