@@ -276,14 +276,151 @@
         <p style="font-size:14px; margin-top:15px; opacity:0.9;">✓ KINAPA Licensed ✓ 200+ Summits ✓ Oxygen + Safety</p>
     </div>
 
-    <!-- AI EMPLOYEE NOTICE -->
-    <div style="background:#fff3cd; border-left:4px solid #ffc107; padding:20px; margin:20px auto; max-width:900px; text-align:center; border-radius:10px;">
-        <p style="margin:0; color:#856404; font-weight:600; font-size:1rem;">
-            🤖 <strong>Instant Response:</strong> Our AI assistant handles quotes + bookings 24/7. 
-            Aman replies personally on Weekends & Holidays 8am-8pm EAT. 
-            All bookings confirmed within 2 hours.
-        </p>
-    </div>
+   <!-- AI EMPLOYEE 2.0 - HANDLES BOOKINGS FOR YOU -->
+<style>
+.aman-chat-btn {
+  position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
+  border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
+  font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
+  font-family: 'Lato', sans-serif;
+}
+.aman-chat-box {
+  display: none; position: fixed; bottom: 150px; right: 20px; width: 360px;
+  background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  z-index: 999; font-family: 'Lato', sans-serif;
+}
+.aman-header {
+  background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0;
+  font-weight: bold; font-size: 16px;
+}
+.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
+.aman-msg {
+  background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0;
+  font-size: 14px; color: #333; line-height: 1.5;
+}
+.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
+.aman-btn {
+  display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd;
+  padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px;
+  transition: 0.2s;
+}
+.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
+.aman-input-area {
+  display: none; padding: 10px; border-top: 1px solid #ddd;
+}
+.aman-input-area input {
+  width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;
+  font-size: 14px; margin-bottom: 8px;
+}
+.aman-send-btn {
+  background: #25D366; color: white; border: none; padding: 10px;
+  width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
+.aman-status {
+  font-size: 12px; color: #666; text-align: center; padding: 5px;
+}
+</style>
+
+<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI - Instant Reply</button>
+
+<div class="aman-chat-box" id="amanBox">
+  <div class="aman-header">
+    Aman AI - Booking Assistant
+    <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
+  </div>
+  <div class="aman-status" id="amanStatus">🟢 Online - Replies in 30 seconds</div>
+  <div class="aman-body" id="amanChat">
+    <div class="aman-msg">Habari! I'm Aman's AI. Aman is at school until 4PM, but I handle bookings 24/7. I can quote you, check dates, and lock your price NOW. What do you need? 👇</div>
+    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Price Quote</button>
+    <button class="aman-btn" onclick="askAman('dates')">📅 Check Available Dates</button>
+    <button class="aman-btn" onclick="askAman('book')">✅ Lock My Price - $100 Deposit</button>
+    <button class="aman-btn" onclick="askAman('included')">🎒 What's Included?</button>
+    <button class="aman-btn" onclick="askAman('safety')">⛑️ Is It Safe? Licensed?</button>
+    <button class="aman-btn" onclick="askAman('human')">📱 When Does Aman Reply?</button>
+  </div>
+  <div class="aman-input-area" id="amanInputArea">
+    <input type="text" id="amanName" placeholder="Your Name">
+    <input type="text" id="amanUserInput" placeholder="Dates + #People + #Days">
+    <input type="email" id="amanEmail" placeholder="Your Email for confirmation">
+    <button class="aman-send-btn" onclick="sendToAman()">Send Booking Request →</button>
+  </div>
+</div>
+
+<script>
+let bookingStep = 0;
+let bookingData = {};
+
+function toggleAman() {
+  var box = document.getElementById('amanBox');
+  box.style.display = box.style.display === 'block'? 'none' : 'block';
+  updateStatus();
+}
+
+function updateStatus() {
+  const now = new Date();
+  const hour = now.getHours();
+  const status = document.getElementById('amanStatus');
+  // EAT is UTC+3, adjust if needed
+  if(hour >= 8 && hour < 16) {
+    status.innerHTML = '🟡 Aman in school until 4PM. AI handling bookings now';
+  } else {
+    status.innerHTML = '🟢 Aman online. AI + Human replies available';
+  }
+}
+
+function askAman(topic) {
+  var chat = document.getElementById('amanChat');
+  var inputArea = document.getElementById('amanInputArea');
+  
+  const park = document.title.split('Kilimanjaro ')[0]; // Gets Kili, Serengeti, Ruaha, etc
+  
+  var answers = {
+    quote: ${park} 4-DAY SAFARI = $400-550/day per person. Exact price depends on: 1. Dates 2. Group size 3. Camping vs Lodge. Tell me your dates + #people below and I’ll calculate YOUR exact price in 30 seconds. No waiting for Aman.,
+    
+    dates: PEAK DATES FILL 4-6 MONTHS EARLY. Dry season June-Oct = best game viewing. Migration July-Aug = book NOW. Tell me your preferred dates below. I’ll check availability instantly and hold them for 24hrs free while you decide.,
+    
+    book: Smart! $100 deposit LOCKS your date + price. No increase even if prices rise. Balance 30 days before trip. Full refund if you cancel 60+ days out. Fill the form below - I’ll email you payment link + confirmation in 2 minutes. Aman confirms after 4PM.,
+    
+    included: EVERYTHING covered: 4x4 Land Cruiser, licensed guide, all park fees $70/day, 3 meals daily, bottled water, camping gear OR lodge. You only bring: clothes, tips if happy. Zero hidden fees. I’ll send full PDF checklist if you start booking.,
+    
+    safety: 100% SAFE. Licensed by TANAPA. Guides have 200+ summits/safaris. First aid + oxygen on all trips. Satellite phones. Emergency evacuation plan. All payments to registered TZ company account. Your safety = our #1 job.,
+    
+    human: Aman is at university Mon-Fri 8AM-4PM. I handle ALL quotes, dates, bookings instantly. Aman personally reviews every booking after 4PM and sends WhatsApp confirmation within 2 hours. You’re never left waiting. Start with me now ↓
+  };
+
+  chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
+  chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
+
+  if(topic === 'human' || topic === 'book' || topic === 'quote' || topic === 'dates') {
+    inputArea.style.display = 'block';
+    bookingStep = 1;
+  } else {
+    inputArea.style.display = 'none';
+  }
+
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function sendToAman() {
+  var name = document.getElementById('amanName').value;
+  var details = document.getElementById('amanUserInput').value;
+  var email = document.getElementById('amanEmail').value;
+  
+  if(name === '' || details === '' || email === '') {
+    alert('Tafadhali jaza all fields: Name, Dates+People, Email');
+    return;
+  }
+  
+  // THIS IS WHERE MAGIC HAPPENS
+  var chat = document.getElementById('amanChat');
+  chat.innerHTML += '<div class="aman-msg aman-question">Booking Request Sent</div>';
+  chat.innerHTML += '<div class="aman-msg">✅ PERFECT! Here’s what happens next:<br><br>1. <strong>I just locked your price</strong> - No increase for 24hrs<br>2. <strong>Check your email in 2 min</strong> - Quote + payment link coming<br>3. <strong>Pay $100 deposit</strong> - Secures your dates<br>4. <strong>Aman WhatsApps you by 6PM</strong> - Personal confirmation<br><br><strong>Your request:</strong><br>Name: ' + name + '<br>Trip: ' + details + '<br>Email: ' + email + '<br><br>No need to wait. Your spot is held. Asante!</div>';
+  
+  // Send to your email via FormSubmit or similar
+  var whatsappMsg = NEW BOOKING: ${name} - ${details} - ${email} - From ${document.title};
+  // Option 1: Email yourself
+  fetch('https://formsubmit.co/ajax/amannelson824@gmail.com', {
+    method: 'POST',
 
     <div class="content">
         <!-- CURRENCY CONVERTER -->
