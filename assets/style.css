@@ -44,13 +44,51 @@ body {
 }
   h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(3.5rem, 10vw, 6rem);
   color: var(--gold);
   }
 
 p {
-  line-height: 1.7;
-  opacity: 0.9;
+  font-size: 1.5rem;
+
+  line-height: 1.8;
+
+  opacity: 1;
+}
+    
+  <div class="section">
+
+<h2 class="section-title">Popular Adventures</h2>
+
+<a class="tour-card" href="kilimanjaro.html">
+🏔️ Kilimanjaro Climb — From $2,495
+</a>
+
+<a class="tour-card" href="serengeti.html">
+🦁 Serengeti Safari — Custom Packages
+</a>
+
+<a class="tour-card" href="ngorongoro.html">
+🌋 Ngorongoro Crater — Day & Multi-Day Tours
+</a>
+
+</div<div class="section">
+
+<h2 class="section-title">Popular Adventures</h2>
+
+<a class="tour-card" href="kilimanjaro.html">
+🏔️ Kilimanjaro Climb — From $2,495
+</a>
+
+<a class="tour-card" href="serengeti.html">
+🦁 Serengeti Safari — Custom Packages
+</a>
+
+<a class="tour-card" href="ngorongoro.html">
+🌋 Ngorongoro Crater — Day & Multi-Day Tours
+</a>
+
+</div>;
 }
 .btn {
   display: inline-block;
@@ -163,8 +201,8 @@ color:var(--gold);
 @media(max-width:768px){
 
 .tour-card{
-font-size:20px;
-padding:22px;
+font-size:22px;
+padding:20px 40px;
 }
 
   }
