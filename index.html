@@ -18,12 +18,14 @@
   <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </nav>
-
+  
+  
 <div class="hero">
   <div class="hero-content">
     <h1>Explore Tanzania with Local Experts</h1>
     <p>Climb Kilimanjaro • See Serengeti Migration • Travel with Licensed Guides</p>
-    <a class="btn" href="kilimanjaro.html">Start Your Adventure</a>
+    <a class="btn" href="#"
+      onclick="openBooking()">Start Your Adventure</a>
   </div>
 </div>
 
@@ -35,6 +37,62 @@
   <div class="card">✔ Safe Payments via CRDB + Cards</div>
   <div class="card">✔ 98% Summit Success Rate</div>
 </div>
+  <!-- BOOKING POPUP -->
+<div id="bookingPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999;">
+  
+  <div style="background:white; width:90%; max-width:500px; margin:80px auto; padding:20px; border-radius:15px; font-family:Lato;">
+    
+    <h2 style="color:#0B3D20;">Start Your Kilimanjaro Adventure</h2>
+
+    <input id="name" placeholder="Full Name" style="width:100%; padding:10px; margin:8px 0;">
+    <input id="email" placeholder="Email" style="width:100%; padding:10px; margin:8px 0;">
+    <input id="people" placeholder="Number of People" style="width:100%; padding:10px; margin:8px 0;">
+    <input id="date" placeholder="Preferred Date" style="width:100%; padding:10px; margin:8px 0;">
+
+    <button onclick="submitBooking()" style="width:100%; padding:12px; background:#D4AF37; border:none; font-weight:bold;">
+      Get My Price & Lock Dates
+    </button>
+
+    <button onclick="closePopup()" style="margin-top:10px; width:100%;">
+      Close
+    </button>
+
+  </div>
+</div>
+   <script> 
+  function openBooking() {
+  document.getElementById('bookingPopup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('bookingPopup').style.display = 'none';
+}
+
+function submitBooking() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const people = document.getElementById('people').value;
+  const date = document.getElementById('date').value;
+
+  if(!name || !email || !people || !date){
+    alert("Please fill all fields");
+    return;
+  }
+
+  const msg = `NEW BOOKING REQUEST:
+Name: ${name}
+Email: ${email}
+People: ${people}
+Date: ${date}
+Trip: Kilimanjaro`;
+
+  // Send to WhatsApp
+  window.open(`https://wa.me/255699004685?text=${encodeURIComponent(msg)}`);
+
+  // Close popup
+  closePopup();
+}
+  </script>
 
 </body>
 </html>
