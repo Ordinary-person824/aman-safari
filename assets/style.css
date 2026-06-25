@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --green: #0B3D20;
+  --gold: #D4AF37;
+  --dark: #0a0a0a;
+  --glass: rgba(255,255,255,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--dark);
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Mount_Kilimanjaro.jpg') center/cover;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: var(--gold);
+}
+
+p {
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: var(--gold);
+  color: var(--green);
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* NAV */
+nav {
+  background: rgba(11,61,32,0.95);
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: var(--glass);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  }
