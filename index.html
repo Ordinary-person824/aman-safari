@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Aman Safari | Kilimanjaro & Tanzania Tours</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aman Safari | Tanzania Tours & Kilimanjaro Climbs</title>
+
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="index.html">Home</a>
   <a href="kilimanjaro.html">Kilimanjaro</a>
@@ -14,110 +19,71 @@
   <a href="ngorongoro.html">Ngorongoro</a>
   <a href="tarangire.html">Tarangire</a>
   <a href="ruaha.html">Ruaha</a>
-  <a href="safari.html">Safaris</a>
-  <a href="about.html">About</a>
   <a href="contact.html">Contact</a>
 </nav>
-  
-  
+
+<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
 
     <h1>Explore Tanzania with Local Experts</h1>
 
     <p>
-      Climb Kilimanjaro • See Serengeti Migration • Travel with Licensed Guides
+      Climb Kilimanjaro • Safari Adventures • Ngorongoro Crater • Serengeti Migration
     </p>
 
     <a class="btn"
-    href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%2C%20I%20want%20to%20check%20availability%20before%20booking">
+      href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%2C%20I%20want%20to%20check%20availability%20before%20booking">
       Check Availability →
     </a>
 
   </div>
 </div>
 
+<!-- TRUST BAR -->
+<div class="section">
+  <p style="text-align:center;">
+    ✔ Licensed Guides • ✔ Safe Payments • ✔ Local Prices • ✔ 98% Summit Success Rate
+  </p>
+</div>
+
+<!-- POPULAR ADVENTURES -->
 <div class="section">
 
-<h2 class="section-title">Popular Adventures</h2>
+  <h2 class="section-title">Popular Adventures</h2>
 
-<a class="tour-card" href="kilimanjaro.html">
-🏔️ Kilimanjaro Climb — From $2,495
-</a>
+  <a class="tour-card" href="kilimanjaro.html">
+    🏔️ Kilimanjaro Climb — From $2,495
+  </a>
 
-<a class="tour-card" href="serengeti.html">
-🦁 Serengeti Safari — Custom Packages
-</a>
+  <a class="tour-card" href="serengeti.html">
+    🦁 Serengeti Safari — Wildlife Migration Tours
+  </a>
 
-<a class="tour-card" href="ngorongoro.html">
-🌋 Ngorongoro Crater — Day & Multi-Day Tours
-</a>
+  <a class="tour-card" href="ngorongoro.html">
+    🌋 Ngorongoro Crater — Full Day & Multi-Day Tours
+  </a>
 
 </div>
+
+<!-- WHY CHOOSE US -->
 <div class="section">
-  <h2>Why Travel With Aman Safari?</h2>
+
+  <h2 class="section-title">Why Travel With Aman Safari?</h2>
 
   <div class="card">✔ Licensed Tanzania Tour Operator</div>
   <div class="card">✔ Local Guides (No Middlemen)</div>
-  <div class="card">✔ Safe Payments via CRDB + Cards</div>
-  <div class="card">✔ 98% Summit Success Rate</div>
+  <div class="card">✔ Secure Payments (CRDB / Online)</div>
+  <div class="card">✔ Professional Mountain & Safari Teams</div>
+
 </div>
-  <!-- BOOKING POPUP -->
-<div id="bookingPopup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999;">
-  
-  <div style="background:white; width:90%; max-width:500px; margin:80px auto; padding:20px; border-radius:15px; font-family:Lato;">
-    
-    <h2 style="color:#0B3D20;">Start Your Kilimanjaro Adventure</h2>
 
-    <input id="name" placeholder="Full Name" style="width:100%; padding:10px; margin:8px 0;">
-    <input id="email" placeholder="Email" style="width:100%; padding:10px; margin:8px 0;">
-    <input id="people" placeholder="Number of People" style="width:100%; padding:10px; margin:8px 0;">
-    <input id="date" placeholder="Preferred Date" style="width:100%; padding:10px; margin:8px 0;">
-
-    <button onclick="submitBooking()" style="width:100%; padding:12px; background:#D4AF37; border:none; font-weight:bold;">
-      Get My Price & Lock Dates
-    </button>
-
-    <button onclick="closePopup()" style="margin-top:10px; width:100%;">
-      Close
-    </button>
-
-  </div>
+<!-- FOOTER -->
+<div class="section">
+  <p style="text-align:center; opacity:0.7;">
+    © 2026 Aman Safari | Tanzania Licensed Tour Operator
+  </p>
 </div>
-   <script> 
-  function openBooking() {
-  document.getElementById('bookingPopup').style.display = 'block';
-}
-
-function closePopup() {
-  document.getElementById('bookingPopup').style.display = 'none';
-}
-
-function submitBooking() {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const people = document.getElementById('people').value;
-  const date = document.getElementById('date').value;
-
-  if(!name || !email || !people || !date){
-    alert("Please fill all fields");
-    return;
-  }
-
-  const msg = `NEW BOOKING REQUEST:
-Name: ${name}
-Email: ${email}
-People: ${people}
-Date: ${date}
-Trip: Kilimanjaro`;
-
-  // Send to WhatsApp
-  window.open(`https://wa.me/255699004685?text=${encodeURIComponent(msg)}`);
-
-  // Close popup
-  closePopup();
-}
-  </script>
 
 </body>
-</html>
+  </html>
