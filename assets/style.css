@@ -53,24 +53,28 @@ p {
   opacity: 0.9;
 }
 .btn {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  font-size: 18px;
-}
-
-.btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 14px 28px;
+  margin-top: 25px;
+  padding: 16px 34px;
+
   background: var(--gold);
   color: var(--green);
+
   border-radius: 30px;
-  font-weight: bold;
+
+  font-weight: 700;
+  font-size: 18px;
+
   text-decoration: none;
-  transition: 0.3s;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+  position: relative;
+  z-index: 3;
+
+  transition: all 0.3s ease;
 }
-.hero h1 {
-  text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
-}
+
 .btn:hover {
   transform: translateY(-3px);
 }
