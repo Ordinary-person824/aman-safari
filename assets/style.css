@@ -39,78 +39,36 @@ body {
 
 .hero-content {
   position: relative;
-  z-index="2;
+  z-index: 2;
   max-width: 800px;
 }
-  h1 {
+
+h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-size: clamp(2.4rem, 6vw, 4rem);
   color: var(--gold);
-  }
+  line-height: 1.2;
+}
 
 p {
-  font-size: 1.5rem;
-
-  line-height: 1.8;
-
-  opacity: 1;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0.95;
 }
-    
-  <div class="section">
 
-<h2 class="section-title">Popular Adventures</h2>
-
-<a class="tour-card" href="kilimanjaro.html">
-🏔️ Kilimanjaro Climb — From $2,495
-</a>
-
-<a class="tour-card" href="serengeti.html">
-🦁 Serengeti Safari — Custom Packages
-</a>
-
-<a class="tour-card" href="ngorongoro.html">
-🌋 Ngorongoro Crater — Day & Multi-Day Tours
-</a>
-
-</div<div class="section">
-
-<h2 class="section-title">Popular Adventures</h2>
-
-<a class="tour-card" href="kilimanjaro.html">
-🏔️ Kilimanjaro Climb — From $2,495
-</a>
-
-<a class="tour-card" href="serengeti.html">
-🦁 Serengeti Safari — Custom Packages
-</a>
-
-<a class="tour-card" href="ngorongoro.html">
-🌋 Ngorongoro Crater — Day & Multi-Day Tours
-</a>
-
-</div>;
-}
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 16px 34px;
-
+  padding: 14px 28px;
   background: var(--gold);
   color: var(--green);
-
   border-radius: 30px;
-
   font-weight: 700;
-  font-size: 18px;
-
+  font-size: 17px;
   text-decoration: none;
-
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-
-  position: relative;
-  z-index: 3;
-
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .btn:hover {
@@ -153,56 +111,36 @@ nav a:hover {
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* TOUR CARDS */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--gold);
+  text-align: center;
+}
+
+.tour-card {
+  display: block;
+  font-size: 18px;
+  padding: 20px;
+  margin: 16px 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.tour-card:hover {
+  transform: translateY(-3px);
+  background: rgba(212,175,55,0.15);
+  color: var(--gold);
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero-content {
-    padding: 0 15px;
-  }
-  }
-/* TOUR CARDS */
-
-.section-title{
-font-size:2rem;
-margin-bottom:20px;
-color:var(--gold);
-text-align:center;
-}
-
-.tour-card{
-display:block;
-
-font-size:22px;
-
-padding:24px;
-
-margin:18px 0;
-
-background:rgba(255,255,255,0.08);
-
-border-radius:18px;
-
-text-decoration:none;
-
-color:white;
-
-transition:0.3s;
-
-border:1px solid rgba(255,255,255,0.1);
-}
-
-.tour-card:hover{
-transform:translateY(-4px);
-
-background:rgba(212,175,55,0.15);
-
-color:var(--gold);
-}
-
-@media(max-width:768px){
-
-.tour-card{
-font-size:22px;
-padding:20px 40px;
-}
-
+  h1 { font-size: 2.2rem; }
+  p { font-size: 1rem; }
+  .tour-card { font-size: 16px; }
   }
