@@ -589,7 +589,7 @@ function sendToAman() {
   document.getElementById('amanInputArea').style.display = 'none';
   chat.scrollTop = chat.scrollHeight;
         }
-    </script>
+    
        <!-- AI EMPLOYEE 2.0 - CRDB READY -->
 <button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI - Instant Reply</button>
 <div class="aman-chat-box" id="amanBox">
@@ -599,14 +599,21 @@ function sendToAman() {
   </div>
   <div class="aman-status" id="amanStatus">🟢 Online - Replies in 30 seconds</div>
   <div class="aman-body" id="amanChat">
-    <div class="aman-msg">Habari! I'm Aman's AI. Aman is at school until 4PM, but I handle bookings 24/7. I can quote you, check dates, and lock your price NOW. What do you need? 👇</div>
-    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Price Quote</button>
-    <button class="aman-btn" onclick="askAman('dates')">📅 Check Available Dates</button>
-    <button class="aman-btn" onclick="askAman('book')">✅ Lock My Price - $100 Deposit</button>
-    <button class="aman-btn" onclick="askAman('included')">🎒 What's Included?</button>
-    <button class="aman-btn" onclick="askAman('safety')">⛑️ Is It Safe? Licensed?</button>
-    <button class="aman-btn" onclick="askAman('human')">📱 When Does Aman Reply?</button>
-  </div>
+    <div class="aman-body" id="amanChat">
+
+<div id="chatMessages"></div>
+
+<input
+id="chatInput"
+placeholder="Ask about prices, dates…">
+
+<button onclick="sendAI()">
+Send
+</button>
+
+</div>
+
+<script src="assets/aman-ai.js"></script>
   <div class="aman-input-area" id="amanInputArea">
     <input type="text" id="amanName" placeholder="Your Name">
     <input type="text" id="amanUserInput" placeholder="Dates + #People + #Days">
