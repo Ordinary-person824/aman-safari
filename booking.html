@@ -101,42 +101,56 @@ opacity:0.8;
   </p>
 
 </div>
-<script>
-function updatePrice(){
 
-const prices={
-Kilimanjaro:2495,
-Serengeti:650,
-Ngorongoro:450,
-Tarangire:350,
-Ruaha:550
+<script>
+
+// GLOBAL prices (both functions can use it)
+const prices = {
+  Kilimanjaro: 2495,
+  Serengeti: 650,
+  Ngorongoro: 450,
+  Tarangire: 350,
+  Ruaha: 550
 };
 
-const tour=
+function updatePrice() {
+
+const tour =
 document.getElementById("tour").value;
 
-const people=
+const people =
 Number(
 document.getElementById("people").value
-)||0;
+) || 0;
 
-if(!people){
-document.getElementById("priceOutput")
-.innerHTML=
+if (people < 1) {
+
+document.getElementById(
+"priceOutput"
+).innerHTML =
 "Select trip + people";
 
+document.getElementById(
+"bookingSummary"
+).style.display =
+"none";
+
 return;
+
 }
 
-const total=
-prices[tour]*people;
+const total =
+prices[tour] * people;
 
-document.getElementById("priceOutput").innerHTML =
+document.getElementById(
+"priceOutput"
+).innerHTML =
 "$" + total.toLocaleString();
 
 document.getElementById(
 "bookingSummary"
-).style.display = "block";
+).style.display =
+"block";
 
 document.getElementById(
 "summaryText"
@@ -144,39 +158,66 @@ document.getElementById(
 `
 Tour: ${tour}<br>
 Travellers: ${people}<br>
-Estimated Total: $${total.toLocaleString()}
+Estimated Total:
+$${total.toLocaleString()}
 `;
+
 }
+
 function sendBooking() {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const date = document.getElementById('date').value;
-  const people = document.getElementById('people').value;
-  const tour = document.getElementById('tour').value;
 
-  if(!name || !email || !date || !people){
-    alert("Please fill all fields");
-    return;
-  }
+const name =
+document.getElementById("name").value;
 
-  const msg =
+const email =
+document.getElementById("email").value;
+
+const date =
+document.getElementById("date").value;
+
+const people =
+document.getElementById("people").value;
+
+const tour =
+document.getElementById("tour").value;
+
+if(!name || !email || !date || !people){
+
+alert(
+"Please fill all fields"
+);
+
+return;
+
+}
+
+const total =
+prices[tour] * people;
+
+const btn =
+document.getElementById(
+"bookBtn"
+);
+
+btn.innerHTML =
+"Opening WhatsApp...";
+
+btn.disabled =
+true;
+
+const msg =
 `NEW BOOKING REQUEST 🔥
+
 Tour: ${tour}
 Name: ${name}
 Email: ${email}
 Date: ${date}
 People: ${people}
 
+Estimated:
+$${total.toLocaleString()}
+
 Please confirm availability + price.`;
-
-  
-  const btn =
-document.getElementById("bookBtn");
-
-btn.innerHTML =
-"Opening WhatsApp...";
-
-btn.disabled = true;
 
 window.open(
 "https://wa.me/255699004685?text=" +
@@ -184,14 +225,19 @@ encodeURIComponent(msg),
 "_blank"
 );
 
-setTimeout(() => {
+setTimeout(()=>{
+
 btn.innerHTML =
 "Get Instant Quote →";
 
-btn.disabled = false;
-}, 3000);
-</script>
+btn.disabled =
+false;
 
+},3000);
+
+}
+
+</script>
 
 </body>
 </html>
