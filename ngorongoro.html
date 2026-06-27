@@ -21,6 +21,205 @@ display:flex;align-items:center;padding:6%;
 
 .section{padding:60px 6%}
 .card{background:#14261d;padding:20px;border-radius:10px}
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat', sans-serif;
+background:#050b08;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* CINEMATIC NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 6%;
+background:rgba(0,0,0,0.25);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+font-family:'Playfair Display';
+font-size:20px;
+color:#d4af37;
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* CINEMATIC HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+padding:0 6%;
+position:relative;
+overflow:hidden;
+}
+
+/* dark cinematic overlay */
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
+z-index:1;
+}
+
+/* animated background */
+.hero-bg{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+transform:scale(1.1);
+animation:zoom 20s infinite alternate;
+filter:contrast(1.1) brightness(0.8);
+}
+
+@keyframes zoom{
+0%{transform:scale(1.1);}
+100%{transform:scale(1.25);}
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:650px;
+animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h1{
+font-family:'Playfair Display';
+font-size:clamp(34px,5vw,70px);
+line-height:1.1;
+}
+
+h1 span{
+color:#d4af37;
+}
+
+p{
+color:#ddd;
+margin-top:15px;
+font-size:15px;
+line-height:1.7;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:12px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+font-size:13px;
+transition:0.3s;
+}
+
+.btn-gold{
+background:#d4af37;
+color:#000;
+}
+
+.btn-outline{
+border:1px solid #d4af37;
+color:#d4af37;
+margin-left:10px;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* SECTIONS */
+.section{
+padding:90px 6%;
+}
+
+.title{
+font-family:'Playfair Display';
+font-size:32px;
+margin-bottom:30px;
+}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+padding:22px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d4af37;
+}
+
+/* CINEMATIC CTA */
+.cta{
+background:linear-gradient(135deg,#d4af37,#8a6a1f);
+color:#000;
+padding:70px 6%;
+text-align:center;
+border-radius:20px;
+}
+
+/* FOOTER */
+footer{
+padding:40px;
+text-align:center;
+color:#aaa;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+nav ul{display:none;}
+.section{padding:60px 6%;}
+}
 </style>
 </head>
 
