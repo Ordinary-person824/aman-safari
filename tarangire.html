@@ -1,655 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarangire Safari | Elephant Paradise Tanzania | Aman Safari</title>
-    <meta name="description" content="Tarangire National Park safari with Aman Safari. 3000+ elephants, ancient baobabs, and huge lion prides. Best park for elephant viewing. Book direct from Arusha.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-        /* Scarcity Bar */
-       .scarcity-bar {
-            background: #ff4444;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-       .header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200') center/cover;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
-       .header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-       .header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-       .nav {
-            background: #1a3a1a;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 36px;
-            z-index: 998;
-        }
-       .nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
-       .nav a:hover {
-            color: #ffc107;
-        }
-       .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-       .section {
-            background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-       .section h2 {
-            color: #1a3a1a;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-       .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-       .highlight-box {
-            background: #f1f8e9;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #4caf50;
-        }
-       .highlight-box h3 {
-            color: #1a3a1a;
-            margin-bottom: 10px;
-        }
-       .package-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-       .package-table th, .package-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-       .package-table th {
-            background: #1a3a1a;
-            color: white;
-        }
-       .package-table tr:hover {
-            background: #f5f5f5;
-        }
-       .btn {
-            display: inline-block;
-            background: #ff6f00;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-       .btn:hover {
-            background: #e65100;
-        }
-       .related-tours {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-       .tour-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-       .tour-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-       .tour-card-content {
-            padding: 20px;
-        }
-       .footer {
-            background: #1a3a1a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-       .season-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-       .safety-badges {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-       .safety-badges span {
-            background: #e8f5e8;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-       .testimonial {
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-       .month-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 8px;
-            margin: 20px 0;
-        }
-       .month {
-            padding: 10px 5px;
-            text-align: center;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-       .best { background: #4caf50; color: white; }
-       .good { background: #ffc107; color: #333; }
-       .avoid { background: #f44336; color: white; }
-       .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 999;
-        }
-        details {
-            margin: 10px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        summary {
-            font-weight: bold;
-            cursor: pointer;
-        }
-        @media (max-width: 768px) {
-           .header h1 { font-size: 2rem; }
-           .nav a { display: block; margin: 10px 0; }
-           .nav { top: 60px; }
-           .month-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        /* AI EMPLOYEE 2.0 STYLES */
-.aman-chat-btn {
-  position: fixed; bottom: 90px; right: 20px; background: #0B3D20; color: white;
-  border: 2px solid #D4AF37; border-radius: 50px; padding: 12px 20px; font-size: 14px;
-  font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 999;
-  font-family: 'Lato', sans-serif;
-}
-.aman-chat-box {
-  display: none; position: fixed; bottom: 150px; right: 20px; width: 360px;
-  background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-  z-index: 999; font-family: 'Lato', sans-serif;
-}
-.aman-header { background: #0B3D20; color: #D4AF37; padding: 15px; border-radius: 15px 15px 0 0; font-weight: bold; font-size: 16px; }
-.aman-body { padding: 15px; max-height: 450px; overflow-y: auto; }
-.aman-msg { background: #f1f1f1; padding: 12px; border-radius: 10px; margin: 8px 0; font-size: 14px; color: #333; line-height: 1.5; }
-.aman-question { background: #DCF8C6; text-align: right; margin-left: 30px; }
-.aman-btn { display: block; width: 100%; text-align: left; background: #f8f8f8; border: 1px solid #ddd; padding: 12px; margin: 6px 0; border-radius: 8px; cursor: pointer; font-size: 14px; transition: 0.2s; }
-.aman-btn:hover { background: #D4AF37; color: #0B3D20; font-weight: bold; }
-.aman-input-area { display: none; padding: 10px; border-top: 1px solid #ddd; }
-.aman-input-area input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; margin-bottom: 8px; }
-.aman-send-btn { background: #25D366; color: white; border: none; padding: 10px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; }
-.aman-status { font-size: 12px; color: #666; text-align: center; padding: 5px; }
-@media (max-width: 600px) { .aman-chat-box { width: 90%; right: 5%; } }
-    </style>
-</head>
-<body>
-    <!-- SCARCITY BAR -->
-    <div class="scarcity-bar">
-        🐘 DRY SEASON: June-Oct only. 2 Jeeps left for Sept. Book before elephants migrate ↓
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Safari Tanzania | Aman Safari</title><style>
 
-    <div class="nav">
-        <a href="index.html">Home</a>
-        <a href="serengeti.html">Serengeti</a>
-        <a href="ngorongoro.html">Ngorongoro</a>
-        <a href="tarangire.html">Tarangire</a>
-        <a href="kilimanjaro.html">Kilimanjaro</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    <div class="header">
-        <h1>Tarangire National Park Safari</h1>
-        <p>Home to 3000+ elephants and ancient baobab trees. The best park in Tanzania for close elephant encounters and massive lion prides.</p>
-    </div>
+body{
+font-family:Arial,sans-serif;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("bg.jpg"),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
 
-    <!-- AI EMPLOYEE NOTICE -->
-    <div class="ai-notice" style="background:#fff3cd; border-left:4px solid #ffc107; padding:20px; margin:0; text-align:center;">
-        <div class="container">
-            <p style="margin:0; color:#856404; font-weight:600; font-size:1rem;">
-                🤖 <strong>Instant Response:</strong> Our AI assistant handles quotes + bookings 24/7. 
-                Aman replies personally on Weekends & Holidays 8am-8pm EAT. 
-                All bookings confirmed within 2 hours.
-            </p>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- CURRENCY CONVERTER -->
-        <div class="section">
-            <h2>💱 Live Price Converter</h2>
-            <select id="currency" onchange="convertPrice()" style="padding:10px; border-radius:5px; border:2px solid #1a3a1a; font-size:16px;">
-                <option value="USD">USD $ - US Dollar</option>
-                <option value="EUR">EUR € - Euro</option>
-                <option value="GBP">GBP £ - British Pound</option>
-                <option value="TZS">TZS - Tanzanian Shilling</option>
-            </select>
-            <p style="margin-top:10px;">Day Trip: <strong id="price-display">$320</strong> per person</p>
-        </div>
-
-        <!-- BEST TIME WIDGET - DETAILED -->
-<div class="section">
-    <h2>📅 Best Time to Visit Tarangire - Month by Month</h2>
-    <p>Tarangire changes completely between dry + wet season. Here’s what to expect:</p>
-    
-    <div class="month-details" style="margin-top:20px;">
-        <details style="background:#fff3cd; border-left:4px solid #ffc107;">
-            <summary style="font-weight:bold; padding:10px; cursor:pointer;">Jan - Mar: Green Season, Baby Animals 🌿</summary>
-            <div style="padding:15px;">
-                <strong>Weather:</strong> Warm, short rains. Lush green landscape.<br>
-                <strong>Animals:</strong> Elephants spread out. Many leave park. Harder to see big herds. BUT: Baby elephants, zebras, wildebeest everywhere.<br>
-                <strong>Crowds:</strong> Low. Great for birding - 550+ species.<br>
-                <strong>Price:</strong> Low season - save $40/day.
-            </div>
-        </details>
-        
-        <details style="background:#ffebee; border-left:4px solid #f44336;">
-            <summary style="font-weight:bold; padding:10px; cursor:pointer;">Apr - May: Heavy Rains, Avoid 🚫</summary>
-            <div style="padding:15px;">
-                <strong>Weather:</strong> Heavy daily rains. Some roads impassable.<br>
-                <strong>Animals:</strong> Scattered. Tall grass hides everything. Many elephants migrate out.<br>
-                <strong>Crowds:</strong> Almost empty.<br>
-                <strong>Price:</strong> Cheapest, but not worth it. We don’t recommend.
-            </div>
-        </details>
-        
-        <details style="background:#e8f5e8; border-left:4px solid #4caf50;">
-            <summary style="font-weight:bold; padding:10px; cursor:pointer;">Jun - Oct: DRY SEASON, ELEPHANT HEAVEN 🐘</summary>
-            <div style="padding:15px;">
-                <strong>Weather:</strong> Dry, cool, 15-27°C. Dusty but perfect game drives.<br>
-                <strong>Animals:</strong> PEAK. 3000+ elephants crowd Tarangire River. See 300 in one herd. Lions, leopards hunt at river. Best time on earth for elephants.<br>
-                <strong>Crowds:</strong> High. Book 3 months early.<br>
-                <strong>Price:</strong> High season rates.
-            </div>
-        </details>
-        
-        <details style="background:#fff3cd; border-left:4px solid #ffc107;">
-            <summary style="font-weight:bold; padding:10px; cursor:pointer;">Nov - Dec: Short Rains, Transition 🌦️</summary>
-            <div style="padding:15px;">
-                <strong>Weather:</strong> Afternoon showers. Landscape turns green fast.<br>
-                <strong>Animals:</strong> Elephants start dispersing. Still good but not peak. Great for photos - green + elephants.<br>
-                <strong>Crowds:</strong> Medium. Good value.<br>
-                <strong>Price:</strong> Shoulder season - save $25/day.
-            </div>
-        </details>
-    </div>
-</div>
-
-        <div class="section">
-            <h2>Why Tarangire?</h2>
-            <p>Tarangire is only 2 hours from Arusha but feels like true wilderness. During dry season June to October, the Tarangire River is the only water source for miles. Thousands of elephants, zebras, and wildebeest come here to drink. You will see herds of 300+ elephants in one sighting.</p>
-            
-            <div class="highlights">
-                <div class="highlight-box">
-                    <h3>3000+ Elephants</h3>
-                    <p>Largest elephant population in Tanzania. See massive herds up close every single day.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>Baobab Trees</h3>
-                    <p>Ancient baobabs over 1000 years old. Iconic African landscapes perfect for photos.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>Big Cats</h3>
-                    <p>Lions, leopards, and cheetahs. Lions here climb trees just like Lake Manyara.</p>
-                </div>
-                <div class="highlight-box">
-                    <h3>No Crowds</h3>
-                    <p>Less tourist traffic than Serengeti. More exclusive safari experience.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- TESTIMONIALS -->
-        <div class="section" style="background:#f8f9fa;">
-            <h2>What Travelers Say After Tarangire 🐘</h2>
-            <div class="testimonial">
-                <p style="font-style:italic">"300 elephants at once! Never seen anything like it. Aman got us so close but safe. Way better than the crowded Serengeti tours."</p>
-                <p><strong>- Jake M., USA</strong> ⭐⭐⭐⭐⭐<br>Tarangire Day Trip, Sept 2025</p>
-            </div>
-            <div class="testimonial">
-                <p style="font-style:italic">"The baobab trees are unreal. Aman knows every secret spot. Saved $300 vs SafariBookings and saw 3x more wildlife."</p>
-                <p><strong>- Sophie L., France</strong> ⭐⭐⭐⭐⭐<br>2-Day Tarangire + Ngorongoro, July 2025</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Tarangire Safari Packages</h2>
-            <div class="safety-badges">
-                <span>🐘 300+ Elephant Herds</span>
-                <span>🌳 Ancient Baobabs</span>
-                <span>📜 TANAPA Licensed</span>
-                <span>🎫 Park Fees Included</span>
-            </div>
-            
-            <!-- VIATOR COMPARISON -->
-            <h3 style="margin-top:30px;">Why Pay $280 More?</h3>
-            <table class="package-table">
-                <tr>
-                    <th>Feature</th>
-                    <th>Aman Safari</th>
-                    <th>SafariBookings</th>
-                </tr>
-                <tr>
-                    <td>Tarangire Day Trip</td>
-                    <td><strong>$320</strong></td>
-                    <td>$600</td>
-                </tr>
-                <tr>
-                    <td>Private Jeep</td>
-                    <td>✅ Included</td>
-                    <td>❌ Shared Van</td>
-                </tr>
-                <tr>
-                    <td>Picnic Lunch</td>
-                    <td>✅ Baobab View</td>
-                    <td>❌ Basic Lunchbox</td>
-                </tr>
-                <tr>
-                    <td>WhatsApp Guide Direct</td>
-                    <td>✅ 24/7 Me</td>
-                    <td>❌ Office Hours</td>
-                </tr>
-            </table>
-
-            <table class="package-table">
-                <tr>
-                    <th>Package</th>
-                    <th>Duration</th>
-                    <th>Price Per Person</th>
-                    <th>Best For</th>
-                </tr>
-                <tr>
-                    <td><strong>Tarangire Day Trip</strong></td>
-                    <td>1 Day</td>
-                    <td class="price-usd" data-usd="320">$320</td>
-                    <td>Short time, elephant lovers</td>
-                </tr>
-                <tr>
-                    <td><strong>Tarangire + Ngorongoro</strong></td>
-                    <td>2 Days</td>
-                    <td class="price-usd" data-usd="620">$620</td>
-                    <td>Weekend safari, budget clients</td>
-                </tr>
-                <tr>
-                    <td><strong>Northern Circuit</strong></td>
-                    <td>6 Days</td>
-                    <td class="price-usd" data-usd="2450">$2,450</td>
-                    <td>Best seller: Tarangire + Ngorongoro + Serengeti</td>
-                </tr>
-            </table>
-            <a href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%20AI,%20I%20want%20to%20book%20Tarangire%20Safari" class="btn">Chat with AI Assistant Now</a>
-            <p style="font-size:0.9rem; color:#666; margin-top:10px;">AI replies instantly. Aman responds weekends.</p>
-        </div>
-
-        <!-- FAQ SECTION -->
-        <div class="section">
-            <h2>Questions Every Smart Traveler Asks 🤔</h2>
-            <details>
-                <summary>Is Tarangire better than Serengeti for elephants?</summary>
-                <p>Yes. Tarangire has 3000+ elephants vs 2000 in Serengeti. During dry season they all gather at the river. You'll see herds of 300+ at once. Serengeti is better for migration.</p>
-            </details>
-            <details>
-                <summary>Why so few tourists if it's so good?</summary>
-                <p>Most agents push Serengeti because it's famous. Tarangire is our secret. No crowds = better photos, more time with animals, cheaper prices.</p>
-            </details>
-            <details>
-                <summary>Can we climb the baobab trees?</summary>
-                <p>No climbing - they're 1000+ years old and protected. But we stop at the biggest ones for photos. Some trunks are 30m wide!</p>
-            </details>
-        </div>
-
-        <div class="section">
-            <h2>What to Expect on Your Tarangire Tour</h2>
-            <p><strong>7:30 AM:</strong> Pickup from Arusha hotel. Drive 2hrs to Tarangire gate.</p>
-            <p><strong>9:30 AM - 4:00 PM:</strong> Full day game drive. We follow the Tarangire River where elephants, giraffes, and lions gather. Stop at Silale Swamp for lions and birds.</p>
-            <p><strong>1:00 PM:</strong> Picnic lunch at one of the designated sites with baobab views.</p>
-            <p><strong>4:30 PM:</strong> Exit park and drive back to Arusha. Arrive 6:30 PM.</p>
-            <p><strong>Tip:</strong> Bring good binoculars. Tarangire has 550+ bird species, best birding park in Tanzania.</p>
-        </div>
-
-        <div class="section">
-            <h2>Combine With Other Parks</h2>
-            <p>Tarangire is perfect as Day 1 of the Northern Circuit. Most clients do Tarangire → Ngorongoro → Serengeti. See our other destinations:</p>
-            <div class="related-tours">
-                <div class="tour-card">
-                    <img src="ngorongoro.jpg.jpg?w=600" alt="Ngorongoro">
-                    <div class="tour-card-content">
-                        <h3>Ngorongoro Crater</h3>
-                        <p>See the Big 5 in one day. Only 3hrs from Tarangire.</p>
-                        <a href="ngorongoro.html" class="btn">View Ngorongoro Tours</a>
-                    </div>
-                </div>
-                <div class="tour-card">
-                    <img src="serengeti.jpg?w=600" alt="Serengeti">
-                    <div class="tour-card-content">
-                        <h3>Serengeti National Park</h3>
-                        <p>Home of the Great Migration. Continue after Ngorongoro.</p>
-                        <a href="serengeti.html" class="btn">View Serengeti Tours</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a href="https://wa.me/255699004685?text=Hi%20Aman%20Safari%20AI,%20I%20saw%20your%20Tarangire%20site.%20Are%20elephants%20guaranteed?" 
-       class="whatsapp-float">
-       💬 Chat Now
-    </a>
-
-    <div class="footer">
-        <p><strong>Aman Safari Tanzania</strong></p>
-        <p>Arusha, Tanzania | WhatsApp: +255 699 004 685</p>
-        <p>© 2026 Aman Safari. All rights reserved.</p>
-    </div>
-
-    <!-- CURRENCY CONVERTER SCRIPT -->
-    <script>
-        const rates = { USD: 1, EUR: 0.92, GBP: 0.79, TZS: 2500 };
-        const symbols = { USD: '$', EUR: '€', GBP: '£', TZS: 'TZS ' };
-        
-        function convertPrice() {
-            const currency = document.getElementById('currency').value;
-            const rate = rates[currency];
-            const symbol = symbols[currency];
-            
-            document.querySelectorAll('.price-usd').forEach(el => {
-                const usd = parseFloat(el.dataset.usd);
-                const converted = (usd * rate).toFixed(0);
-                el.textContent = symbol + converted.toLocaleString();
-            });
-            
-            document.getElementById('price-display').textContent = symbol + (320 * rate).toFixed(0).toLocaleString();
-        }
-        // AI EMPLOYEE 2.0 WITH CRDB
-function toggleAman() {
-  var box = document.getElementById('amanBox');
-  box.style.display = box.style.display === 'block'? 'none' : 'block';
-  updateStatus();
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+min-height:100vh;
 }
 
-function updateStatus() {
-  const now = new Date();
-  const hour = now.getHours();
-  const status = document.getElementById('amanStatus');
-  if(hour >= 8 && hour < 16) {
-    status.innerHTML = '🟡 Aman in school until 4PM. AI handling bookings now';
-  } else {
-    status.innerHTML = '🟢 Aman online. AI + Human replies available';
-  }
+/* NAV */
+nav{
+background:rgba(11,61,32,.9);
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
 }
 
-function askAman(topic) {
-  var chat = document.getElementById('amanChat');
-  var inputArea = document.getElementById('amanInputArea');
-  const park = document.title.split('Tarangire')[0];
-  
-  var answers = {
-    quote: `${park} 4-DAY SAFARI = $400-550/day per person. Exact price depends on: 1. Dates 2. Group size 3. Camping vs Lodge. Tell me your dates + #people below and I’ll calculate YOUR exact price in 30 seconds. No waiting for Aman.`,
-    dates: `PEAK DATES FILL 4-6 MONTHS EARLY. Dry season June-Oct = best game viewing. Migration July-Aug = book NOW. Tell me your preferred dates below. I’ll check availability instantly and hold them for 24hrs free while you decide.`,
-    book: `Smart! $100 deposit LOCKS your date + price. No increase even if prices rise. Balance 30 days before trip. Full refund if you cancel 60+ days out. Fill the form below - I’ll email you payment link + confirmation in 2 minutes. Aman confirms after 4PM.`,
-    included: `EVERYTHING covered: 4x4 Land Cruiser, licensed guide, all park fees $70/day, 3 meals daily, bottled water, camping gear OR lodge. You only bring: clothes, tips if happy. Zero hidden fees. I’ll send full PDF checklist if you start booking.`,
-    safety: `100% SAFE. Licensed by TANAPA. Guides have 200+ summits/safaris. First aid + oxygen on all trips. Satellite phones. Emergency evacuation plan. All payments to registered TZ company account. Your safety = our #1 job.`,
-    human: `Aman is at university Mon-Fri 8AM-4PM. I handle ALL quotes, dates, bookings instantly. Aman personally reviews every booking after 4PM and sends WhatsApp confirmation within 2 hours. You’re never left waiting. Start with me now ↓`
-  };
-
-  chat.innerHTML += '<div class="aman-msg aman-question">' + event.target.innerText + '</div>';
-  chat.innerHTML += '<div class="aman-msg">' + answers[topic] + '</div>';
-
-  if(topic === 'human' || topic === 'book' || topic === 'quote' || topic === 'dates') {
-    inputArea.style.display = 'block';
-  } else {
-    inputArea.style.display = 'none';
-  }
-  chat.scrollTop = chat.scrollHeight;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
 }
 
-// CRDB PAYMENT FUNCTION - ACCOUNT: 0152946488700 NAME: AMAN MTAGWABA NELSON
-function sendToAman() {
-  var name = document.getElementById('amanName').value;
-  var details = document.getElementById('amanUserInput').value;
-  var email = document.getElementById('amanEmail').value;
-  
-  if(name === '' || details === '' || email === '') {
-    alert('Tafadhali jaza all fields: Name, Dates+People, Email');
-    return;
-  }
-  
-  var chat = document.getElementById('amanChat');
-  const park = document.title.split(' ')[0];
-  
-  chat.innerHTML += '<div class="aman-msg aman-question">Booking Request Sent</div>';
-  chat.innerHTML += `<div class="aman-msg">✅ DONE! Your price is locked for 24hrs. Here’s what happens next:<br><br>
-  <strong>1. Check your email NOW</strong> - Payment instructions sent to ${email}<br><br>
-  <strong>2. Pay $100 deposit to lock dates:</strong><br>
-     <u>CRDB Bank Transfer (Fastest for TZ)</u><br>
-     Bank: CRDB Bank<br>
-     Account: <strong>0152946488700</strong><br>
-     Name: <strong>AMAN MTAGWABA NELSON</strong><br>
-     Amount: $100 USD or TZS 250,000<br>
-     Reference: ${name} ${park}<br><br>
-     <u>International:</u> Use Wise.com → Send to CRDB 0152946488700<br>
-     Beneficiary Name: AMAN MTAGWABA NELSON<br><br>
-  <strong>3. WhatsApp me screenshot</strong> to +255 699 004 685 after paying<br>
-  <strong>4. I confirm within 2 hours</strong> - Even from school<br><br>
-  <strong>Your request:</strong><br>Name: ${name}<br>Trip: ${details}<br><br>
-  No need to wait. Your spot is held. Asante sana!</div>`;
-  
-  fetch('https://formsubmit.co/ajax/amannelson824@gmail.com', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      name: name,
-      message: `NEW $100 DEPOSIT PENDING: ${details} | Client Email: ${email} | From: ${document.title} | Tell client to pay CRDB 0152946488700 - AMAN MTAGWABA NELSON`,
-      _subject: '🔥 New Safari Booking - Check CRDB for Payment',
-      _template: 'table'
-    })
-  });
+.active{
+color:#D4AF37;
+}
 
-  fetch('https://formsubmit.co/ajax/' + email, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      _subject: 'Aman Safari - Pay $100 to Lock Your ' + park + ' Dates',
-      message: `Habari ${name},\n\nAsante for booking with Aman Safari!\n\nYOUR TRIP: ${details}\n\nTO LOCK YOUR DATES - Pay $100 deposit:\n\nOPTION 1: CRDB Bank Transfer (Fastest)\nBank: CRDB Bank\nAccount: 0152946488700\nName: AMAN MTAGWABA NELSON\nAmount: $100 USD or TZS 250,000\nReference: ${name} ${park}\n\nOPTION 2: International Transfer\nUse Wise.com or Remitly.com\nBank: CRDB Bank\nAccount: 0152946488700\nBeneficiary: AMAN MTAGWABA NELSON\n\nAFTER PAYMENT:\nWhatsApp screenshot to +255 699 004 685\n\nAman confirms within 2 hours. Your dates are held 24hrs.\n\nKaribu Tanzania!\nAman Safari Team`
-    })
-  });
-  
-  document.getElementById('amanName').value = '';
-  document.getElementById('amanUserInput').value = '';
-  document.getElementById('amanEmail').value = '';
-  document.getElementById('amanInputArea').style.display = 'none';
-  chat.scrollTop = chat.scrollHeight;
-        }
-    </script>
-    <!-- AI EMPLOYEE 2.0 - CRDB READY -->
-<button class="aman-chat-btn" onclick="toggleAman()">💬 Ask Aman AI - Instant Reply</button>
-<div class="aman-chat-box" id="amanBox">
-  <div class="aman-header">
-    Aman AI - Booking Assistant
-    <span style="float:right; cursor:pointer;" onclick="toggleAman()">✕</span>
-  </div>
-  <div class="aman-status" id="amanStatus">🟢 Online - Replies in 30 seconds</div>
-  <div class="aman-body" id="amanChat">
-    <div class="aman-msg">Habari! I'm Aman's AI. Aman is at school until 4PM, but I handle bookings 24/7. I can quote you, check dates, and lock your price NOW. What do you need? 👇</div>
-    <button class="aman-btn" onclick="askAman('quote')">💰 Get Instant Price Quote</button>
-    <button class="aman-btn" onclick="askAman('dates')">📅 Check Available Dates</button>
-    <button class="aman-btn" onclick="askAman('book')">✅ Lock My Price - $100 Deposit</button>
-    <button class="aman-btn" onclick="askAman('included')">🎒 What's Included?</button>
-    <button class="aman-btn" onclick="askAman('safety')">⛑️ Is It Safe? Licensed?</button>
-    <button class="aman-btn" onclick="askAman('human')">📱 When Does Aman Reply?</button>
-  </div>
-  <div class="aman-input-area" id="amanInputArea">
-    <input type="text" id="amanName" placeholder="Your Name">
-    <input type="text" id="amanUserInput" placeholder="Dates + #People + #Days">
-    <input type="email" id="amanEmail" placeholder="Your Email for confirmation">
-    <button class="aman-send-btn" onclick="sendToAman()">Send Booking Request →</button>
-  </div>
-</div>
-</body>
-    </html>
+/* HERO */
+.hero{
+min-height:75vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-size:clamp(38px,6vw,60px);
+}
+
+.hero span{
+color:#D4AF37;
+}
+
+.hero p{
+margin-top:10px;
+opacity:.9;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#D4AF37;
+color:#111;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTIONS */
+.section{
+max-width:900px;
+margin:25px auto;
+padding:30px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(8px);
+border-radius:18px;
+}
+
+.section h2{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:12px;
+}
+
+/* PRICE */
+.price{
+text-align:center;
+}
+
+.price h3{
+font-size:48px;
+color:#D4AF37;
+}
+
+/* FAQ */
+details{
+background:rgba(255,255,255,.08);
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+}
+
+summary{
+cursor:pointer;
+font-weight:bold;
+}
+
+/* CHAT */
+.chat{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 22px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media(max-width:700px){
+.hero h1{font-size:40px;}
+.section{margin:15px;}
+}
+
+</style></head><body><!-- NAV --><nav>
+<a href="index.html">Home</a>
+<a href="serengeti.html">Serengeti</a>
+<a href="tarangire.html">Tarangire</a>
+<a href="ngorongoro.html">Ngorongoro</a>
+<a href="ruaha.html">Ruaha</a>
+<a href="kilimanjaro.html">Kilimanjaro</a>
+</nav><!-- HERO --><section class="hero"><div><h1>
+SAFARI <span>EXPERIENCE</span>
+</h1><p>
+Premium Tanzania safari experience with expert local guides.
+</p><a href="https://wa.me/255699004685" class="btn">
+Book Now →
+</a></div></section><!-- WHY --><section class="section"><h2>Why Choose This Destination</h2><div class="grid"><div class="card">
+<h3>🦁 Wildlife</h3>
+<p>Rich wildlife viewing opportunities.</p>
+</div><div class="card">
+<h3>🚙 Guides</h3>
+<p>Professional licensed safari guides.</p>
+</div><div class="card">
+<h3>🌍 Experience</h3>
+<p>Authentic Tanzania adventure.</p>
+</div></div></section><!-- PRICE --><section class="section price"><h2>Price</h2><h3>$400</h3><p>per person / per day</p><br><p>Includes safari vehicle, guide & arrangements</p><a href="https://wa.me/255699004685" class="btn">
+Get Quote
+</a></section><!-- FAQ --><section class="section"><h2>FAQ</h2><details>
+<summary>Best time to visit?</summary>
+<p>Dry season is recommended for best wildlife viewing.</p>
+</details><details>
+<summary>How many days?</summary>
+<p>3–5 days recommended depending on destination.</p>
+</details><details>
+<summary>How to book?</summary>
+<p>Contact via WhatsApp with your dates and group size.</p>
+</details></section><!-- CHAT --><a href="https://wa.me/255699004685" class="chat">
+💬 Chat Now
+</a></body>
+</html>
