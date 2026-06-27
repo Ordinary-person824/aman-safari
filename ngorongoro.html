@@ -1,427 +1,181 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ngorongoro Crater Safari | Aman Safari</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Safari Tanzania | Aman Safari</title><style>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f6f8;
-color:#1f2933;
-line-height:1.6;
+font-family:Arial,sans-serif;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("bg.jpg"),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+min-height:100vh;
 }
 
-.header{
-min-height:70vh;
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url(""https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200" (https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200)") center/cover no-repeat;
+/* NAV */
+nav{
+background:rgba(11,61,32,.9);
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+.active{
+color:#D4AF37;
+}
+
+/* HERO */
+.hero{
+min-height:75vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:#fff;
-padding:24px;
-}
-
-.hero{
-max-width:760px;
+padding:30px;
 }
 
 .hero h1{
-font-size:clamp(2.2rem,5vw,3.5rem);
-margin-bottom:12px;
-font-weight:700;
-letter-spacing:.3px;
+font-size:clamp(38px,6vw,60px);
+}
+
+.hero span{
+color:#D4AF37;
 }
 
 .hero p{
-font-size:1.15rem;
-opacity:.95;
-margin-bottom:8px;
+margin-top:10px;
+opacity:.9;
+font-size:18px;
 }
 
 .btn{
 display:inline-block;
-margin-top:22px;
-background:#d4af37;
-padding:14px 28px;
-border-radius:10px;
-text-decoration:none;
+margin-top:25px;
+padding:14px 30px;
+background:#D4AF37;
 color:#111;
-font-weight:700;
-transition:transform .2s ease, box-shadow .2s ease;
-box-shadow:0 8px 18px rgba(0,0,0,.18);
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 12px 22px rgba(0,0,0,.22);
-}
-
+/* SECTIONS */
 .section{
-max-width:1000px;
-margin:28px auto;
-background:#fff;
-padding:32px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(15,23,42,.08);
+max-width:900px;
+margin:25px auto;
+padding:30px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(8px);
+border-radius:18px;
 }
 
 .section h2{
-margin-bottom:14px;
-color:#0b3d20;
-font-size:1.6rem;
+color:#D4AF37;
+margin-bottom:15px;
 }
 
-.section p{
-font-size:1.02rem;
-color:#374151;
-}
-
-.cards{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-gap:16px;
-margin-top:22px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
 }
 
 .card{
-background:#fafafa;
-padding:22px;
-border-radius:14px;
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:12px;
+}
+
+/* PRICE */
+.price{
 text-align:center;
-border:1px solid #e5e7eb;
-transition:transform .2s ease, box-shadow .2s ease;
 }
 
-.card:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(15,23,42,.08);
+.price h3{
+font-size:48px;
+color:#D4AF37;
 }
 
-.card h3{
-color:#0b3d20;
-margin-bottom:8px;
-font-size:1.05rem;
+/* FAQ */
+details{
+background:rgba(255,255,255,.08);
+padding:15px;
+border-radius:10px;
+margin-top:10px;
 }
 
-.card p{
-color:#4b5563;
-font-size:.98rem;
+summary{
+cursor:pointer;
+font-weight:bold;
 }
 
 /* CHAT */
-
-.chat-btn{
+.chat{
 position:fixed;
-right:20px;
 bottom:20px;
-background:#0b3d20;
-color:#fff;
-padding:14px 22px;
-border-radius:50px;
-cursor:pointer;
-box-shadow:0 10px 24px rgba(0,0,0,.2);
-z-index:1000;
-font-weight:700;
-}
-
-.chat-box{
-display:none;
-position:fixed;
 right:20px;
-bottom:80px;
-width:340px;
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 14px 36px rgba(0,0,0,.22);
-z-index:1000;
-border:1px solid #e5e7eb;
-}
-
-.chat-header{
-background:#0b3d20;
-padding:14px 16px;
-color:#fff;
-font-weight:700;
-}
-
-.chat-body{
-padding:14px;
-height:280px;
-overflow:auto;
-background:#f9fafb;
-}
-
-.msg{
-background:#eef2f7;
-padding:10px 12px;
-margin:8px 0;
-border-radius:10px;
-font-size:.95rem;
-color:#1f2933;
-}
-
-.user{
-background:#dcf8c6;
-}
-
-.quick{
-width:100%;
-padding:10px 12px;
-margin:6px 0;
-border:none;
-background:#fff;
-border-radius:10px;
-cursor:pointer;
-text-align:left;
-border:1px solid #e5e7eb;
-transition:background .2s ease, transform .2s ease;
-}
-
-.quick:hover{
-background:#f3f4f6;
-transform:translateY(-1px);
-}
-
-.input{
-display:flex;
-padding:12px;
-gap:8px;
-background:#fff;
-border-top:1px solid #e5e7eb;
-}
-
-.input input{
-flex:1;
-padding:11px 12px;
-border:1px solid #d1d5db;
-border-radius:10px;
-outline:none;
-font-size:.95rem;
-}
-
-.input input:focus{
-border-color:#0b3d20;
-box-shadow:0 0 0 3px rgba(11,61,32,.12);
-}
-
-.input button{
-background:#d4af37;
-border:none;
-padding:11px 16px;
-border-radius:10px;
-font-weight:700;
-cursor:pointer;
-color:#111;
+background:#25D366;
+padding:14px 22px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
 @media(max-width:700px){
-
-.section{
-margin:18px 14px;
-padding:24px;
+.hero h1{font-size:40px;}
+.section{margin:15px;}
 }
 
-.hero h1{
-font-size:2.2rem;
-}
-
-.chat-box{
-width:92%;
-right:4%;
-}
-
-.chat-btn{
-right:14px;
-bottom:14px;
-}
-
-}
-</style>
-
-</head>
-
-<body>
-
-<header class="header">
-<div class="hero">
-<h1>Ngorongoro Crater Safari</h1>
-<p>Experience the Big Five in a single day</p>
-
-<a class="btn"
-href=""https://wa.me/255699004685" (https://wa.me/255699004685)">
-Book Now
-</a>
-
-</div>
-</header>
-
-<section class="section">
-<h2>Overview</h2>
-
-<p>
-Descend into the world’s largest intact volcanic crater and enjoy exceptional wildlife viewing, including lions, elephants, rhinos, and breathtaking panoramic scenery.
-</p>
-
-</section>
-
-<section class="section">
-
-<h2>Why Visit?</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🦁 Big Five</h3>
-<p>Excellent chances of wildlife sightings</p>
-</div>
-
-<div class="card">
-<h3>📷 Scenic Views</h3>
-<p>Ideal for photography and sightseeing</p>
-</div>
-
-<div class="card">
-<h3>🚙 4x4 Safari</h3>
-<p>Travel in a comfortable safari jeep</p>
-</div>
-
-<div class="card">
-<h3>🎒 Included</h3>
-<p>Professional guide and park fees</p>
-</div>
-
-</div>
-
-</section>
-
-<div class="chat-btn"
-onclick="toggleChat()">
-💬 Chat AI
-</div>
-
-<div class="chat-box"
-id="chat">
-
-<div class="chat-header">
-Aman Safari AI
-</div>
-
-<div class="chat-body"
-id="body">
-
-<div class="msg">
-Hello 👋 Ask about pricing, dates, or booking details.
-</div>
-
-<button class="quick"
-onclick="reply('price')">
-💰 Price
-</button>
-
-<button class="quick"
-onclick="reply('dates')">
-📅 Dates
-</button>
-
-<button class="quick"
-onclick="reply('book')">
-🧾 Booking
-</button>
-
-</div>
-
-<div class="input">
-
-<input
-id="input"
-placeholder="Type your question...">
-
-<button
-onclick="send()">
-→
-</button>
-
-</div>
-
-</div>
-
-<script>
-
-function toggleChat(){
-
-let c=
-document.getElementById("chat");
-
-c.style.display=
-c.style.display==="block"
-?
-"none"
-:
-"block";
-
-}
-
-function reply(type){
-
-let body=
-document.getElementById("body");
-
-const data={
-
-price:
-"Prices start from $350 per person.",
-
-dates:
-"Best season: June to October.",
-
-book:
-"Please send your name, preferred dates, and email address."
-
-};
-
-body.innerHTML+=
-`<div class='msg user'>${type}</div>`;
-
-body.innerHTML+=
-`<div class='msg'>${data[type]}</div>`;
-
-}
-
-function send(){
-
-let input=
-document.getElementById("input");
-
-if(!input.value)
-return;
-
-document
-.getElementById("body")
-.innerHTML+=
-`<div class='msg user'>${input.value}</div>
-
-<div class='msg'>
-AI responses will be available soon.
-</div>`;
-
-input.value="";
-
-}
-
-</script>
-
-</body>
-           </html>
+</style></head><body><!-- NAV --><nav>
+<a href="index.html">Home</a>
+<a href="serengeti.html">Serengeti</a>
+<a href="tarangire.html">Tarangire</a>
+<a href="ngorongoro.html">Ngorongoro</a>
+<a href="ruaha.html">Ruaha</a>
+<a href="kilimanjaro.html">Kilimanjaro</a>
+</nav><!-- HERO --><section class="hero"><div><h1>
+SAFARI <span>EXPERIENCE</span>
+</h1><p>
+Premium Tanzania safari experience with expert local guides.
+</p><a href="https://wa.me/255699004685" class="btn">
+Book Now →
+</a></div></section><!-- WHY --><section class="section"><h2>Why Choose This Destination</h2><div class="grid"><div class="card">
+<h3>🦁 Wildlife</h3>
+<p>Rich wildlife viewing opportunities.</p>
+</div><div class="card">
+<h3>🚙 Guides</h3>
+<p>Professional licensed safari guides.</p>
+</div><div class="card">
+<h3>🌍 Experience</h3>
+<p>Authentic Tanzania adventure.</p>
+</div></div></section><!-- PRICE --><section class="section price"><h2>Price</h2><h3>$400</h3><p>per person / per day</p><br><p>Includes safari vehicle, guide & arrangements</p><a href="https://wa.me/255699004685" class="btn">
+Get Quote
+</a></section><!-- FAQ --><section class="section"><h2>FAQ</h2><details>
+<summary>Best time to visit?</summary>
+<p>Dry season is recommended for best wildlife viewing.</p>
+</details><details>
+<summary>How many days?</summary>
+<p>3–5 days recommended depending on destination.</p>
+</details><details>
+<summary>How to book?</summary>
+<p>Contact via WhatsApp with your dates and group size.</p>
+</details></section><!-- CHAT --><a href="https://wa.me/255699004685" class="chat">
+💬 Chat Now
+</a></body>
+</html>
