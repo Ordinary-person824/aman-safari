@@ -1,158 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Serengeti Safari | Aman Safari Tanzania</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Safari Tanzania | Aman Safari</title><style>
 
-<style>
-body {margin:0; font-family:Arial; background:#f5f5f5;}
+*{margin:0;padding:0;box-sizing:border-box}
 
-.header {
-  background:#0B3D20;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
+body{
+font-family:Arial,sans-serif;
+color:white;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("bg.jpg"),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+min-height:100vh;
 }
 
-.section {
-  max-width:1000px;
-  margin:20px auto;
-  background:white;
-  padding:20px;
-  border-radius:10px;
+/* NAV */
+nav{
+background:rgba(11,61,32,.9);
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
 }
 
-.btn {
-  background:#D4AF37;
-  padding:12px;
-  border:none;
-  font-weight:bold;
-  border-radius:8px;
-  cursor:pointer;
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+font-weight:bold;
+}
+
+.active{
+color:#D4AF37;
+}
+
+/* HERO */
+.hero{
+min-height:75vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-size:clamp(38px,6vw,60px);
+}
+
+.hero span{
+color:#D4AF37;
+}
+
+.hero p{
+margin-top:10px;
+opacity:.9;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#D4AF37;
+color:#111;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* SECTIONS */
+.section{
+max-width:900px;
+margin:25px auto;
+padding:30px;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(8px);
+border-radius:18px;
+}
+
+.section h2{
+color:#D4AF37;
+margin-bottom:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:12px;
+}
+
+/* PRICE */
+.price{
+text-align:center;
+}
+
+.price h3{
+font-size:48px;
+color:#D4AF37;
+}
+
+/* FAQ */
+details{
+background:rgba(255,255,255,.08);
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+}
+
+summary{
+cursor:pointer;
+font-weight:bold;
 }
 
 /* CHAT */
-.chat-btn {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#0B3D20;
-  color:white;
-  padding:12px 18px;
-  border-radius:50px;
-  cursor:pointer;
+.chat{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px 22px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 
-.chat-box {
-  position:fixed;
-  bottom:80px;
-  right:20px;
-  width:300px;
-  background:white;
-  border-radius:10px;
-  display:none;
-  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+@media(max-width:700px){
+.hero h1{font-size:40px;}
+.section{margin:15px;}
 }
 
-.chat-header {
-  background:#0B3D20;
-  color:white;
-  padding:10px;
-}
-
-.chat-body {
-  padding:10px;
-  max-height:300px;
-  overflow:auto;
-}
-
-.msg {
-  background:#eee;
-  padding:8px;
-  margin:6px 0;
-  border-radius:6px;
-}
-
-.user {background:#DCF8C6;}
-
-button {margin:3px; padding:8px; cursor:pointer;}
-
-input {
-  width:90%;
-  padding:8px;
-  margin:5px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-<h1>Serengeti National Park</h1>
-<p>Home of the Great Migration</p>
-</div>
-
-<div class="section">
-<h2>Overview</h2>
-<p>See 2 million wildebeest, lions, and endless savannah.</p>
-<button class="btn">Book Serengeti Safari</button>
-</div>
-
-<!-- CHAT -->
-<div class="chat-btn" onclick="toggleChat()">💬 Chat AI</div>
-
-<div class="chat-box" id="chatBox">
-
-  <div class="chat-header">Aman AI - Serengeti</div>
-
-  <div class="chat-body" id="chatBody">
-    <div class="msg">Hi 👋 I can help with Serengeti prices, migration, and booking.</div>
-
-    <button onclick="reply('price')">💰 Price</button>
-    <button onclick="reply('migration')">🦓 Migration</button>
-    <button onclick="reply('book')">🧾 Book</button>
-  </div>
-
-  <input id="userInput" placeholder="Ask anything...">
-  <button onclick="send()">Send</button>
-
-</div>
-
-<script>
-
-function toggleChat(){
-  let box = document.getElementById("chatBox");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-
-function reply(type){
-
-  let chat = document.getElementById("chatBody");
-
-  let answers = {
-    price: "💰 Serengeti safari starts from $450 per person per day (all included)",
-    migration: "🦓 Best migration is July–October (north Serengeti river crossing)",
-    book: "🧾 Send your name + dates + group size to book instantly"
-  };
-
-  chat.innerHTML += `<div class='msg user'>${type}</div>`;
-  chat.innerHTML += `<div class='msg'>${answers[type]}</div>`;
-}
-
-function send(){
-  let input = document.getElementById("userInput");
-  let chat = document.getElementById("chatBody");
-
-  if(input.value.trim() === "") return;
-
-  chat.innerHTML += `<div class='msg user'>${input.value}</div>`;
-  chat.innerHTML += `<div class='msg'>Got it 👍 I will help you with Serengeti info</div>`;
-
-  input.value = "";
-}
-
-</script>
-
-</body>
-      </html>
+</style></head><body><!-- NAV --><nav>
+<a href="index.html">Home</a>
+<a href="serengeti.html">Serengeti</a>
+<a href="tarangire.html">Tarangire</a>
+<a href="ngorongoro.html">Ngorongoro</a>
+<a href="ruaha.html">Ruaha</a>
+<a href="kilimanjaro.html">Kilimanjaro</a>
+</nav><!-- HERO --><section class="hero"><div><h1>
+SAFARI <span>EXPERIENCE</span>
+</h1><p>
+Premium Tanzania safari experience with expert local guides.
+</p><a href="https://wa.me/255699004685" class="btn">
+Book Now →
+</a></div></section><!-- WHY --><section class="section"><h2>Why Choose This Destination</h2><div class="grid"><div class="card">
+<h3>🦁 Wildlife</h3>
+<p>Rich wildlife viewing opportunities.</p>
+</div><div class="card">
+<h3>🚙 Guides</h3>
+<p>Professional licensed safari guides.</p>
+</div><div class="card">
+<h3>🌍 Experience</h3>
+<p>Authentic Tanzania adventure.</p>
+</div></div></section><!-- PRICE --><section class="section price"><h2>Price</h2><h3>$400</h3><p>per person / per day</p><br><p>Includes safari vehicle, guide & arrangements</p><a href="https://wa.me/255699004685" class="btn">
+Get Quote
+</a></section><!-- FAQ --><section class="section"><h2>FAQ</h2><details>
+<summary>Best time to visit?</summary>
+<p>Dry season is recommended for best wildlife viewing.</p>
+</details><details>
+<summary>How many days?</summary>
+<p>3–5 days recommended depending on destination.</p>
+</details><details>
+<summary>How to book?</summary>
+<p>Contact via WhatsApp with your dates and group size.</p>
+</details></section><!-- CHAT --><a href="https://wa.me/255699004685" class="chat">
+💬 Chat Now
+</a></body>
+</html>
