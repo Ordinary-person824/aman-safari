@@ -30,3 +30,26 @@ el.style.transition=
 ".8s";
 
 });
+const menu=
+
+document.querySelector(
+".mobile"
+);
+
+const links=
+
+document.querySelector(
+".links"
+);
+
+if(menu){
+
+menu.onclick=()=>{
+
+links.classList.toggle(
+"show"
+);
+
+};
+
+}
