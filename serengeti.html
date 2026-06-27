@@ -1,200 +1,52 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Serengeti Safari | Aman Safari Tanzania</title><style>
+<title>Serengeti Safari</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Arial;background:#07130e;color:#fff}
+nav{display:flex;justify-content:space-between;padding:15px 6%;background:rgba(0,0,0,0.6);position:fixed;width:100%;top:0}
+nav ul{display:flex;gap:15px;list-style:none}
+nav a{color:#ddd;text-decoration:none;font-size:13px}
+.logo{color:#d4af37;font-weight:bold}
 
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:Arial,sans-serif;
-color:white;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-min-height:100vh;
-}
-
-/* NAV */
-nav{
-background:rgba(11,61,32,.9);
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin:0 10px;
-font-weight:bold;
-}
-
-.active{color:#D4AF37}
-
-/* HERO */
 .hero{
-min-height:80vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
+height:90vh;
+background:url('https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1600&q=80') center/cover;
+display:flex;align-items:center;padding:6%;
 }
 
-.hero h1{
-font-size:clamp(40px,6vw,65px);
-}
+.hero h1{font-size:50px}
+.hero span{color:#d4af37}
 
-.hero span{
-color:#D4AF37;
-}
+.section{padding:60px 6%}
+.card{background:#14261d;padding:20px;border-radius:10px}
+</style>
+</head>
 
-.hero p{
-margin-top:10px;
-font-size:18px;
-opacity:.9;
-max-width:700px;
-margin-inline:auto;
-}
+<body>
 
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 32px;
-background:#D4AF37;
-color:#111;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-}
+<nav>
+<div class="logo">AMAN SAFARI</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="serengeti.html">Serengeti</a></li>
+<li><a href="tarangire.html">Tarangire</a></li>
+<li><a href="ngorongoro.html">Ngorongoro</a></li>
+<li><a href="ruaha.html">Ruaha</a></li>
+<li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+</ul>
+</nav>
 
-/* SECTIONS */
-.section{
-max-width:900px;
-margin:25px auto;
-padding:30px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(8px);
-border-radius:18px;
-}
+<section class="hero">
+<div>
+<h1>SERENGETI <span>WILDEBEEST KINGDOM</span></h1>
+</div>
+</section>
 
-.section h2{
-color:#D4AF37;
-margin-bottom:15px;
-}
+<section class="section">
+<div class="card">Home of Great Migration, Lions & Endless Plains</div>
+</section>
 
-/* HIGHLIGHT GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.card{
-background:rgba(255,255,255,.08);
-padding:20px;
-border-radius:12px;
-}
-
-/* PRICE */
-.price{
-text-align:center;
-}
-
-.price h3{
-font-size:52px;
-color:#D4AF37;
-}
-
-/* BADGE */
-.badge{
-display:inline-block;
-background:#D4AF37;
-color:#111;
-padding:6px 12px;
-border-radius:20px;
-font-weight:bold;
-margin-bottom:10px;
-}
-
-/* FAQ */
-details{
-background:rgba(255,255,255,.08);
-padding:15px;
-border-radius:10px;
-margin-top:10px;
-}
-
-summary{
-cursor:pointer;
-font-weight:bold;
-}
-
-/* CHAT */
-.chat{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px 22px;
-border-radius:40px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-@media(max-width:700px){
-.hero h1{font-size:40px;}
-.section{margin:15px;}
-}
-
-</style></head><body><nav>
-<a href="index.html">Home</a>
-<a href="serengeti.html" class="active">Serengeti</a>
-<a href="tarangire.html">Tarangire</a>
-<a href="ngorongoro.html">Ngorongoro</a>
-<a href="ruaha.html">Ruaha</a>
-<a href="kilimanjaro.html">Kilimanjaro</a>
-</nav><!-- HERO --><section class="hero"><div><span class="badge">WORLD FAMOUS SAFARI</span>
-
-<h1>
-SERENGETI <span>MIGRATION</span>
-</h1><p>
-Witness the Great Wildebeest Migration — over 1.5 million animals moving across the plains in the world’s most famous safari ecosystem.
-</p><a href="https://wa.me/255699004685" class="btn">
-Plan Migration Safari →
-</a></div></section><!-- WHY --><section class="section"><h2>Why Serengeti</h2><div class="grid"><div class="card">
-<h3>🐃 Migration</h3>
-<p>Largest animal migration on Earth.</p>
-</div><div class="card">
-<h3>🦁 Big Five</h3>
-<p>Lion, leopard, elephant, buffalo, rhino.</p>
-</div><div class="card">
-<h3>🌍 UNESCO Site</h3>
-<p>World heritage protected ecosystem.</p>
-</div></div></section><!-- PRICE --><section class="section price"><h2>Safari Price</h2><h3>$550</h3><p>per person / per day (high season)</p><br><p>
-Includes safari vehicle, guide, park fees & logistics
-</p><a href="https://wa.me/255699004685" class="btn">
-Get Exact Quote
-</a></section><!-- FAQ --><section class="section"><h2>FAQ</h2><details>
-<summary>Best time for migration?</summary>
-<p>June–October (river crossings) and December–March (calving season).</p>
-</details><details>
-<summary>How many days?</summary>
-<p>4–6 days recommended for full experience.</p>
-</details><details>
-<summary>Is Serengeti crowded?</summary>
-<p>Yes in peak zones — but migration views are worth it.</p>
-</details></section><!-- CTA --><section class="section"><h2>Plan Your Serengeti Safari</h2><p>
-Get exact migration timing and lodge availability for your dates.
-</p><a href="https://wa.me/255699004685" class="btn">
-Talk to Safari Planner →
-</a></section><!-- CHAT --><a href="https://wa.me/255699004685" class="chat">
-💬 Chat Now
-</a></body>
-  </html>
+</body>
+</html>
