@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Ruaha Safari</title>
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{margin:0;font-family:Arial;background:#07130e;color:#fff}
-nav{display:flex;justify-content:space-between;padding:15px 6%;background:rgba(0,0,0,0.6);position:fixed;width:100%;top:0}
-nav ul{display:flex;gap:15px;list-style:none}
-nav a{color:#ddd;text-decoration:none;font-size:13px}
-.logo{color:#d4af37;font-weight:bold}
 
-.hero{
-height:90vh;
-background:url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80') center/cover;
-display:flex;align-items:center;padding:6%;
-}
+<title>Ruaha | Aman Safari</title>
 
-.hero h1{font-size:50px}
-.hero span{color:#d4af37}
-
-.section{padding:60px 6%}
-.card{background:#14261d;padding:20px;border-radius:10px}
-
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -32,218 +19,350 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Montserrat', sans-serif;
+font-family:'Montserrat',sans-serif;
 background:#050b08;
 color:#fff;
 overflow-x:hidden;
 }
 
-/* CINEMATIC NAV */
+/* NAV */
+
 nav{
 position:fixed;
 top:0;
-width:100%;
-z-index:999;
+left:0;
+right:0;
+
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
-padding:14px 6%;
-background:rgba(0,0,0,0.25);
-backdrop-filter:blur(16px);
-border-bottom:1px solid rgba(255,255,255,0.08);
+
+padding:18px 6%;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(14px);
+
+z-index:1000;
 }
 
 .logo{
 font-family:'Playfair Display';
-font-size:20px;
+font-size:22px;
 color:#d4af37;
-letter-spacing:1px;
 }
 
 nav ul{
 display:flex;
-gap:22px;
+gap:20px;
 list-style:none;
 }
 
 nav a{
 color:#ddd;
 text-decoration:none;
-font-size:13px;
-transition:0.3s;
+font-size:14px;
 }
 
 nav a:hover{
 color:#d4af37;
 }
 
-/* CINEMATIC HERO */
+/* HERO */
+
 .hero{
+
 height:100vh;
+
 display:flex;
+
 align-items:center;
+
 padding:0 6%;
+
 position:relative;
-overflow:hidden;
-}
 
-/* dark cinematic overlay */
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
-z-index:1;
-}
+background:
+linear-gradient(
+rgba(0,0,0,.35),
+rgba(0,0,0,.78)
+),
 
-/* animated background */
-.hero-bg{
-position:absolute;
-inset:0;
+url("https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1800&q=80");
+
 background-size:cover;
+
 background-position:center;
-transform:scale(1.1);
-animation:zoom 20s infinite alternate;
-filter:contrast(1.1) brightness(0.8);
 }
 
-@keyframes zoom{
-0%{transform:scale(1.1);}
-100%{transform:scale(1.25);}
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+radial-gradient(
+circle,
+transparent,
+rgba(0,0,0,.7)
+);
+
 }
 
 .hero-content{
+
 position:relative;
+
 z-index:2;
-max-width:650px;
-animation:fadeIn 1.5s ease;
+
+max-width:700px;
+
+animation:fade 1.4s ease;
 }
 
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(40px);
 }
 
-h1{
+to{
+opacity:1;
+transform:none;
+}
+
+}
+
+.hero h1{
+
 font-family:'Playfair Display';
-font-size:clamp(34px,5vw,70px);
-line-height:1.1;
+
+font-size:
+clamp(
+48px,
+8vw,
+95px
+);
+
+line-height:1;
 }
 
-h1 span{
+.hero span{
 color:#d4af37;
 }
 
-p{
+.hero p{
+
+margin-top:22px;
+
+line-height:1.9;
+
+font-size:17px;
+
 color:#ddd;
-margin-top:15px;
-font-size:15px;
-line-height:1.7;
+
+max-width:560px;
+}
+
+/* BUTTONS */
+
+.buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:30px;
+
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 22px;
-border-radius:8px;
+
+padding:14px 26px;
+
+border-radius:999px;
+
 text-decoration:none;
-font-weight:600;
-font-size:13px;
-transition:0.3s;
+
+font-weight:700;
+
+transition:.3s;
 }
 
-.btn-gold{
+.primary{
+
 background:#d4af37;
-color:#000;
+
+color:black;
 }
 
-.btn-outline{
-border:1px solid #d4af37;
-color:#d4af37;
-margin-left:10px;
+.secondary{
+
+border:1px solid white;
+
+color:white;
 }
 
 .btn:hover{
-transform:translateY(-2px);
+
+transform:
+translateY(-4px);
 }
 
-/* SECTIONS */
+/* CONTENT */
+
 .section{
+
 padding:90px 6%;
 }
 
-.title{
-font-family:'Playfair Display';
-font-size:32px;
-margin-bottom:30px;
-}
-
-/* CARDS */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-}
-
 .card{
-background:rgba(255,255,255,0.04);
-padding:22px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.08);
-transition:0.4s;
+
+background:#101915;
+
+padding:35px;
+
+border-radius:22px;
+
+max-width:900px;
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.45);
 }
 
-.card:hover{
-transform:translateY(-8px);
-border-color:#d4af37;
+.card h2{
+
+font-family:'Playfair Display';
+
+margin-bottom:18px;
+
+color:#d4af37;
 }
 
-/* CINEMATIC CTA */
-.cta{
-background:linear-gradient(135deg,#d4af37,#8a6a1f);
-color:#000;
-padding:70px 6%;
-text-align:center;
-border-radius:20px;
-}
+.card p{
 
-/* FOOTER */
-footer{
-padding:40px;
-text-align:center;
-color:#aaa;
-border-top:1px solid rgba(255,255,255,0.08);
+line-height:1.9;
+
+color:#d7d7d7;
 }
 
 /* MOBILE */
-@media(max-width:768px){
-nav ul{display:none;}
-.section{padding:60px 6%;}
+
+@media(max-width:800px){
+
+nav ul{
+display:none;
 }
+
+.hero{
+height:88vh;
+}
+
+.hero p{
+font-size:15px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <nav>
-<div class="logo">AMAN SAFARI</div>
+
+<div class="logo">
+AMAN SAFARI
+</div>
+
 <ul>
+
 <li><a href="index.html">Home</a></li>
+
 <li><a href="serengeti.html">Serengeti</a></li>
+
 <li><a href="tarangire.html">Tarangire</a></li>
+
 <li><a href="ngorongoro.html">Ngorongoro</a></li>
+
 <li><a href="ruaha.html">Ruaha</a></li>
+
 <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+
 </ul>
+
 </nav>
 
-<div class="hero-bg"
-style="background:url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=1600&q=80')">
-<h1>Ruaha <span>Raw Wilderness</span></h1>
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+RUAHA
+
+<span>
+
+RAW WILDERNESS
+
+</span>
+
+</h1>
+
+<p>
+
+Experience one of Tanzania’s most remote safari landscapes with dramatic wildlife encounters and untamed beauty.
+
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="kilimanjaro.html">
+
+Next Journey
+
+</a>
+
+<a class="btn secondary" href="ngorongoro.html">
+
+Previous
+
+</a>
+
 </div>
+
+</div>
+
+</section>
+
 <section class="section">
-<div class="card">Remote safari wilderness with big predators</div>
+
+<div class="card">
+
+<h2>
+
+Why Ruaha?
+
+</h2>
+
+<p>
+
+Ruaha offers huge landscapes, impressive predator sightings, and a quieter premium safari experience far from crowded routes.
+
+</p>
+
+</div>
+
 </section>
 
 </body>
-</html>
+
+  </html>
