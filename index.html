@@ -607,41 +607,60 @@ Hello 👋 Ask anything about safari.
 </div>
 
 <input id="msg" placeholder="Ask about safari...">
+<script>
 
+async function sendAI(){
+
+const text =
+document.getElementById("msg").value;
+
+if(!text)return;
+
+const reply =
+document.getElementById("reply");
+
+reply.innerHTML="Thinking...";
+
+try{
+
+const res =
+await fetch(
+"http://localhost:3000/chat",
+{
+method:"POST",
+headers:{
+"Content-Type":
+"application/json"
+},
+body:JSON.stringify({
+message:text
+})
+}
+);
+
+const data =
+await res.json();
+
+reply.innerHTML =
+data.reply;
+
+}
+catch(err){
+
+reply.innerHTML =
+"Cannot connect to backend";
+
+}
+
+}
+
+</script>
 <button onclick="sendAI()">
 Send
 </button>
 
 </div>
 
-<script>
-
-async function sendAI(){
-
-const input = document.getElementById("msg");
-const reply = document.getElementById("reply");
-
-const text = input.value.trim();
-if(!text) return;
-
-reply.innerHTML += <br><br><b>You:</b> ${text};
-input.value = "";
-
-reply.innerHTML += <br><b>AI:</b> thinking...;
-
-const res = await fetch("http://localhost:3000/chat", {
-method: "POST",
-headers: {"Content-Type":"application/json"},
-body: JSON.stringify({ message: text })
-});
-
-const data = await res.json();
-
-reply.innerHTML += <br><b>AI:</b> ${data.reply};
-
-}
-
-</script>
 
 </body>
 
