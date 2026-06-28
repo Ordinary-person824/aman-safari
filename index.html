@@ -6,6 +6,12 @@
 <title>Aman Safari</title>
 
 <style>
+:root{
+--gold:#d4af37;
+--dark:#07130e;
+--glass:rgba(255,255,255,.05);
+}
+
 *{
 margin:0;
 padding:0;
@@ -13,18 +19,22 @@ box-sizing:border-box;
 font-family:Arial;
 }
 
-:root{
---gold:#d4af37;
+body{
+background:var(--dark);
+color:white;
+overflow-x:hidden;
 }
 
 /* NAV */
 nav{
 position:fixed;
 top:0;
-width:100%;
+left:0;
+right:0;
 padding:16px 6%;
 display:flex;
 justify-content:space-between;
+align-items:center;
 background:rgba(0,0,0,.3);
 backdrop-filter:blur(10px);
 z-index:1000;
@@ -32,19 +42,19 @@ z-index:1000;
 
 .logo{
 color:var(--gold);
-font-weight:bold;
 font-size:20px;
+font-weight:bold;
 }
 
-.links{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-.links a{
+nav a{
 color:white;
 text-decoration:none;
+margin-left:15px;
+font-size:14px;
+}
+
+nav a:hover{
+color:var(--gold);
 }
 
 /* HERO */
@@ -53,36 +63,33 @@ height:100vh;
 display:flex;
 align-items:center;
 padding:0 6%;
-background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80") center/cover;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.55);
-}
-
-.hero-content{
-position:relative;
-max-width:600px;
-color:white;
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80");
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-size:60px;
+font-size:clamp(40px,7vw,80px);
 }
 
-.gold{color:var(--gold);}
+.hero span{color:var(--gold);}
+
+.hero p{
+margin-top:15px;
+max-width:500px;
+color:#ddd;
+}
 
 /* BUTTONS */
 .btn{
-display:inline-block;
-padding:12px 20px;
-margin-top:20px;
+padding:12px 22px;
 border-radius:999px;
 text-decoration:none;
+display:inline-block;
+margin-top:20px;
+transition:.3s;
 }
 
 .primary{
@@ -91,6 +98,14 @@ color:black;
 font-weight:bold;
 }
 
+.secondary{
+border:1px solid white;
+color:white;
+margin-left:10px;
+}
+
+.btn:hover{transform:translateY(-3px);}
+
 /* SECTION */
 .section{
 padding:80px 6%;
@@ -98,14 +113,21 @@ padding:80px 6%;
 
 /* BOOKING */
 .booking{
-background:#111c16;
+background:var(--glass);
+backdrop-filter:blur(12px);
 padding:30px;
 border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.booking h2{
+margin-bottom:20px;
 }
 
 .booking form{
 display:grid;
-gap:12px;
+grid-template-columns:1fr 1fr;
+gap:15px;
 }
 
 .booking input,
@@ -113,20 +135,57 @@ gap:12px;
 .booking textarea{
 padding:14px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:#1a2720;
 color:white;
 }
 
-/* CHAT */
+.booking textarea{
+grid-column:span 2;
+height:100px;
+}
+
+.booking button{
+grid-column:span 2;
+padding:14px;
+border:none;
+background:var(--gold);
+font-weight:bold;
+border-radius:999px;
+cursor:pointer;
+}
+
+/* PARKS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.card{
+background:var(--glass);
+padding:25px;
+border-radius:18px;
+text-decoration:none;
+color:white;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:var(--gold);
+}
+
+/* FLOAT CHAT BUTTON */
 #chatBtn{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:18px;
+right:18px;
 width:55px;
 height:55px;
 border-radius:50%;
-background:var(--gold);
+background:#00a884;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -134,62 +193,63 @@ cursor:pointer;
 font-size:20px;
 }
 
+/* CHAT BOX */
 #chatBox{
 position:fixed;
-bottom:90px;
-right:20px;
+bottom:85px;
+right:18px;
 width:320px;
-height:420px;
+height:450px;
 background:#0b141a;
-border-radius:15px;
+border-radius:16px;
 display:none;
 flex-direction:column;
 overflow:hidden;
+border:1px solid rgba(255,255,255,.1);
 }
 
 #top{
 background:#111b21;
 padding:10px;
-color:white;
 display:flex;
 justify-content:space-between;
+font-weight:bold;
 }
 
 #messages{
 flex:1;
 padding:10px;
-overflow:auto;
+overflow-y:auto;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:10px;
 }
 
 .msg{
 padding:10px;
 border-radius:10px;
 max-width:75%;
+font-size:14px;
 }
 
 .user{
 align-self:flex-end;
 background:#005c4b;
-color:white;
 }
 
 .ai{
 align-self:flex-start;
 background:#202c33;
-color:white;
 }
 
-.input{
+.inputBox{
 display:flex;
-padding:8px;
-gap:6px;
+padding:10px;
+gap:8px;
 background:#111b21;
 }
 
-.input input{
+.inputBox input{
 flex:1;
 padding:10px;
 border:none;
@@ -198,93 +258,134 @@ background:#202c33;
 color:white;
 }
 
-.input button{
+.inputBox button{
 background:var(--gold);
 border:none;
-padding:10px;
+padding:10px 14px;
 border-radius:10px;
 cursor:pointer;
+}
+
+@media(max-width:768px){
+.booking form{grid-template-columns:1fr;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <div class="logo">AMAN SAFARI</div>
-<ul class="links">
-<li><a href="#booking">Book</a></li>
-<li><a href="#parks">Parks</a></li>
-</ul>
+<div>
+<a href="#booking">Booking</a>
+<a href="#parks">Parks</a>
+</div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<h1>Explore <span class="gold">Luxury Tanzania</span></h1>
+<div>
+<h1>Luxury <span>Tanzania Safari</span></h1>
+<p>Explore Serengeti, Ngorongoro, Tarangire and more with premium safari experiences.</p>
+
 <a class="btn primary" href="#booking">Book Now</a>
+<a class="btn secondary" href="#parks">Explore</a>
 </div>
 </section>
 
+<!-- BOOKING -->
 <section id="booking" class="section">
 <div class="booking">
-<h2>Book Safari</h2>
+<h2>Book Your Safari</h2>
+
 <form>
-<input placeholder="Name">
+<input placeholder="Full Name">
 <input placeholder="Email">
+<input placeholder="WhatsApp">
 <select>
+<option>Select Park</option>
 <option>Serengeti</option>
-<option>Ngorongoro</option>
 <option>Tarangire</option>
+<option>Ngorongoro</option>
+<option>Ruaha</option>
+<option>Kilimanjaro</option>
 </select>
 <input type="date">
-<button type="button">Reserve</button>
+<input type="number" placeholder="People">
+<textarea placeholder="Message"></textarea>
+<button type="button">Send Booking</button>
 </form>
+
 </div>
 </section>
 
-<!-- CHAT -->
+<!-- PARKS -->
+<section id="parks" class="section">
+<div class="grid">
+
+<a class="card" href="serengeti.html">
+🦁 Serengeti
+</a>
+
+<a class="card" href="tarangire.html">
+🐘 Tarangire
+</a>
+
+<a class="card" href="ngorongoro.html">
+🌋 Ngorongoro
+</a>
+
+</div>
+</section>
+
+<!-- CHAT BUTTON -->
 <div id="chatBtn" onclick="toggleChat()">💬</div>
 
+<!-- CHAT BOX -->
 <div id="chatBox">
+
 <div id="top">
 AI Assistant
-<span onclick="toggleChat()">✖</span>
+<span onclick="toggleChat()" style="cursor:pointer">✖</span>
 </div>
 
 <div id="messages"></div>
 
-<div class="input">
+<div class="inputBox">
 <input id="msg" placeholder="Ask anything...">
-<button onclick="send()">➤</button>
+<button onclick="sendAI()">➤</button>
 </div>
+
 </div>
 
 <script>
 function toggleChat(){
-const box=document.getElementById("chatBox");
-box.style.display = box.style.display==="flex" ? "none":"flex";
+const box = document.getElementById("chatBox");
+box.style.display = box.style.display === "flex" ? "none" : "flex";
+box.style.flexDirection = "column";
 }
 
-async function send(){
-const input=document.getElementById("msg");
-const msg=input.value;
-if(!msg)return;
+async function sendAI(){
+const input = document.getElementById("msg");
+const messages = document.getElementById("messages");
 
-document.getElementById("messages").innerHTML+=
-`<div class="msg user">${msg}</div>`;
+const text = input.value.trim();
+if(!text) return;
 
-input.value="";
+messages.innerHTML += `<div class="msg user">${text}</div>`;
+input.value = "";
 
 const res = await fetch("http://localhost:3000/chat",{
 method:"POST",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({message:msg})
+body:JSON.stringify({message:text})
 });
 
 const data = await res.json();
 
-document.getElementById("messages").innerHTML+=
-`<div class="msg ai">${data.reply}</div>`;
+messages.innerHTML += `<div class="msg ai">${data.reply}</div>`;
+messages.scrollTop = messages.scrollHeight;
 }
 </script>
 
