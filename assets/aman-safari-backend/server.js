@@ -1,46 +1,89 @@
 import express from "express";
 import cors from "cors";
+import OpenAI from "openai";
 
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
 
-let bookings=[];
+const client = new OpenAI({
+apiKey:"YOUR_OPENAI_API_KEY"
+});
 
+app.post("/chat", async (req,res)=>{
 
-// receive booking
+try{
 
-app.post("/book",(req,res)=>{
+const userMessage = req.body.message;
 
-const booking=req.body;
+const completion =
+await client.chat.completions.create({
 
-bookings.push(booking);
+model:"gpt-4.1-mini",
 
-console.log("New booking:",booking);
+messages:[
+
+{
+role:"system",
+content:`
+
+You are Aman AI.
+
+You can answer general questions.
+
+Capabilities:
+- normal conversation
+- explain ideas
+- help with travel
+- answer school questions
+- coding help
+- booking guidance
+
+If user asks safari questions,
+switch naturally into travel assistant mode.
+
+Keep answers clear and friendly.
+
+`
+},
+
+{
+role:"user",
+content:userMessage
+}
+
+]
+
+});
 
 res.json({
 
-success:true,
-
-message:"Safari booked"
+reply:
+completion
+.choices[0]
+.message
+.content
 
 });
 
+}
+
+catch(err){
+
+res.status(500).json({
+
+reply:
+"AI temporarily unavailable"
+
 });
 
-
-// view bookings
-
-app.get("/bookings",(req,res)=>{
-
-res.json(bookings);
+}
 
 });
 
 app.listen(3000,()=>{
 
-console.log("Running");
+console.log("AI ready");
 
 });
