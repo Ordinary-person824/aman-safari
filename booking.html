@@ -3,244 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Safari - Kilimanjaro Luxury Expeditions</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #F8F5F0; }
 
-<title>Book Your Safari | Aman Safari</title>
+    header {
+        background: rgba(0,0,0,0.9);
+        padding: 15px 0;
+    }
 
-<link rel="stylesheet" href="assets/style.css">
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+   .logo { color: #C9A961; font-size: 24px; font-weight: bold; }
+   .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 14px;
+    }
+   .menu a:hover,.menu a.active { color: #C9A961; }
+
+   .booking-container {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+   .booking-box {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 10px;
+        color: #3D2B1F;
+    }
+
+   .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+    }
+
+   .form-group { margin-bottom: 20px; }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #3D2B1F;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        outline: none;
+        border-color: #C9A961;
+    }
+
+   .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+   .btn {
+        background: #C9A961;
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+   .btn:hover { background: #B89650; }
+
+   .info-box {
+        background: #F8F5F0;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        border-left: 4px solid #C9A961;
+    }
+
+    footer {
+        background: #1A1A1A;
+        color: #aaa;
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 80px;
+    }
+
+    footer a { color: #C9A961; text-decoration: none; }
+
+    @media (max-width: 768px) {
+       .form-row { grid-template-columns: 1fr; }
+       .menu a { margin-left: 15px; font-size: 12px; }
+       .booking-box { padding: 25px; }
+    }
+</style>
 </head>
-
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-</nav>
+<header>
+    <nav>
+        <div class="logo">KILIMANJARO</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="kilimanjaro.html">Kilimanjaro</a>
+            <a href="serengeti.html">Serengeti</a>
+            <a href="ngorongoro.html">Ngorongoro</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="ruaha.html">Ruaha</a>
+            <a href="booking.html" class="active">Book Now</a>
+        </div>
+    </nav>
+</header>
 
-<div class="section">
+<div class="booking-container">
+    <div class="booking-box">
+        <h1>Plan Your Safari</h1>
+        <p class="subtitle">Tell us where you want to go and we'll handle the rest</p>
 
-<h2 class="section-title">Book Your Adventure</h2>
+        <div class="info-box">
+            <strong>Response Time:</strong> We reply within 24 hours with a custom itinerary and quote.<br>
+            <strong>Need Help?</strong> Call/WhatsApp: <a href="tel:+255699004685">+255 699 004 685</a>
+        </div>
 
-<select
-id="tour"
-onchange="updatePrice()"
-style="width:100%; padding:12px; margin:10px 0;">
-  <option value="Kilimanjaro">🏔️ Kilimanjaro Climb</option>
-  <option value="Serengeti">🦁 Serengeti Safari</option>
-  <option value="Ngorongoro">🌋 Ngorongoro Crater</option>
-  <option value="Tarangire">🐘 Tarangire Safari</option>
-  <option value="Ruaha">🦓 Ruaha Safari</option>
-</select>
+        <form action="https://formsubmit.co/amannelson824@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Safari Booking Request">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
 
-<input id="name" placeholder="Full Name" style="width:100%; padding:12px; margin:10px 0;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" name="email" required placeholder="john@example.com">
+                </div>
+            </div>
 
-<input
-id="email"
-type="email"
-placeholder="Email"
-style="width:100%; padding:12px; margin:10px 0;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Phone/WhatsApp</label>
+                    <input type="tel" name="phone" placeholder="+1 234 567 8900">
+                </div>
+                <div class="form-group">
+                    <label>Number of People *</label>
+                    <select name="group_size" required>
+                        <option value="">Select</option>
+                        <option value="1">Solo Traveler</option>
+                        <option value="2">2 People</option>
+                        <option value="3-4">3-4 People</option>
+                        <option value="5-8">5-8 People</option>
+                        <option value="9+">9+ People</option>
+                    </select>
+                </div>
+            </div>
 
-<input
-id="date"
-type="date"
-style="width:100%; padding:12px; margin:10px 0;">
+            <div class="form-group">
+                <label>Choose Your Destination *</label>
+                <select name="route" required id="route-select">
+                    <option value="">Select destination</option>
+                    <option value="Kilimanjaro">Kilimanjaro - 7-9 Days Trek</option>
+                    <option value="Serengeti">Serengeti - 4-7 Days Safari</option>
+                    <option value="Ngorongoro">Ngorongoro Crater - 3-5 Days</option>
+                    <option value="Tarangire">Tarangire - 2-4 Days Safari</option>
+                    <option value="Ruaha">Ruaha - 3-6 Days Safari</option>
+                    <option value="Multiple">Multiple Parks - Custom Itinerary</option>
+                </select>
+            </div>
 
-<input
-id="people"
-type="number"
-min="1"
-oninput="updatePrice()"
-placeholder="Number of People"
-style="width:100%; padding:12px; margin:10px 0;">
-  <div id="priceBox"
-style="
-padding:15px;
-margin:15px 0;
-border-radius:12px;
-background:rgba(212,175,55,0.15);
-text-align:center;
-font-size:1.1rem;
-">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Preferred Start Date *</label>
+                    <input type="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Trip Duration</label>
+                    <select name="duration">
+                        <option value="">Flexible</option>
+                        <option value="3-5 days">3-5 Days</option>
+                        <option value="6-8 days">6-8 Days</option>
+                        <option value="9-12 days">9-12 Days</option>
+                        <option value="13+ days">13+ Days</option>
+                    </select>
+                </div>
+            </div>
 
-Estimated Price:
-<strong id="priceOutput">
-Select trip + people
-</strong>
+            <div class="form-group">
+                <label>Accommodation Level</label>
+                <select name="accommodation">
+                    <option value="Luxury">Luxury - 5 Star Lodges & Camps</option>
+                    <option value="Mid-Range">Mid-Range - 4 Star Comfort</option>
+                    <option value="Budget">Budget - 3 Star Clean & Safe</option>
+                    <option value="Mixed">Mixed - Depends on Location</option>
+                </select>
+            </div>
 
-  </div>
-  <div id="bookingSummary"
-style="
-display:none;
-padding:18px;
-border-radius:14px;
-background:rgba(11,61,32,0.75);
-margin-bottom:15px;
-">
+            <div class="form-group">
+                <label>Special Requests / Questions</label>
+                <textarea name="message" rows="4" placeholder="Dietary needs, accessibility, celebrating something, specific wildlife you want to see..."></textarea>
+            </div>
 
-<h3 style="margin-bottom:10px;">
-Your Selection
-</h3>
+            <button type="submit" class="btn">Send Booking Request</button>
+        </form>
 
-<p id="summaryText"></p>
-
-  </div>
-<button
-id="bookBtn"
-class="btn"
-onclick="sendBooking()"
-style="width:100%;">
-
-Get Instant Quote →
-
-</button>
-  <p style="
-text-align:center;
-margin-top:18px;
-font-size:0.95rem;
-opacity:0.8;
-">
-1. Send request → 2. We confirm availability → 3. You receive final quote
-  </p>
-
+        <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+            First submission? Check your email to activate the form.
+        </p>
+    </div>
 </div>
 
+<footer>
+    <p><strong>Kilimanjaro Luxury Expeditions</strong></p>
+    <p>Arusha, Tanzania</p>
+    <p>Phone: <a href="tel:+255699004685">+255 699 004 685</a></p>
+    <p>Email: <a href="mailto:amannelson824@gmail.com">amannelson824@gmail.com</a></p>
+    <p style="margin-top: 20px; font-size: 14px;">&copy; 2026 All rights reserved</p>
+</footer>
+
 <script>
+    // Auto-set min date to today
+    document.querySelector('input[name="date"]').min = new Date().toISOString().split('T')[0];
 
-// GLOBAL prices (both functions can use it)
-const prices = {
-  Kilimanjaro: 2495,
-  Serengeti: 650,
-  Ngorongoro: 450,
-  Tarangire: 350,
-  Ruaha: 550
-};
-
-function updatePrice() {
-
-const tour =
-document.getElementById("tour").value;
-
-const people =
-Number(
-document.getElementById("people").value
-) || 0;
-
-if (people < 1) {
-
-document.getElementById(
-"priceOutput"
-).innerHTML =
-"Select trip + people";
-
-document.getElementById(
-"bookingSummary"
-).style.display =
-"none";
-
-return;
-
-}
-
-const total =
-prices[tour] * people;
-
-document.getElementById(
-"priceOutput"
-).innerHTML =
-"$" + total.toLocaleString();
-
-document.getElementById(
-"bookingSummary"
-).style.display =
-"block";
-
-document.getElementById(
-"summaryText"
-).innerHTML =
-`
-Tour: ${tour}<br>
-Travellers: ${people}<br>
-Estimated Total:
-$${total.toLocaleString()}
-`;
-
-}
-
-function sendBooking() {
-
-const name =
-document.getElementById("name").value;
-
-const email =
-document.getElementById("email").value;
-
-const date =
-document.getElementById("date").value;
-
-const people =
-document.getElementById("people").value;
-
-const tour =
-document.getElementById("tour").value;
-
-if(!name || !email || !date || !people){
-
-alert(
-"Please fill all fields"
-);
-
-return;
-
-}
-
-const total =
-prices[tour] * people;
-
-const btn =
-document.getElementById(
-"bookBtn"
-);
-
-btn.innerHTML =
-"Opening WhatsApp...";
-
-btn.disabled =
-true;
-
-const msg =
-`NEW BOOKING REQUEST 🔥
-
-Tour: ${tour}
-Name: ${name}
-Email: ${email}
-Date: ${date}
-People: ${people}
-
-Estimated:
-$${total.toLocaleString()}
-
-Please confirm availability + price.`;
-
-window.open(
-"https://wa.me/255699004685?text=" +
-encodeURIComponent(msg),
-"_blank"
-);
-  alert(
-"Booking request prepared ✅\n\nWhatsApp opened.\nSend the message and we'll confirm availability."
-);
-
-setTimeout(()=>{
-
-btn.innerHTML =
-"Get Instant Quote →";
-
-btn.disabled =
-false;
-
-},3000);
-
-}
-
+    // Pre-select route if coming from park page
+    const urlParams = new URLSearchParams(window.location.search);
+    const route = urlParams.get('route');
+    if (route) {
+        document.getElementById('route-select').value = route;
+    }
 </script>
 
 </body>
-</html>
+                      </html>
