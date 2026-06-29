@@ -43,14 +43,14 @@
         align-items: center;
     }
 
-   .logo {
+  .logo {
         color: #C9A961;
         font-size: 28px;
         font-weight: 600;
         letter-spacing: 2px;
     }
 
-   .menu a {
+  .menu a {
         color: white;
         text-decoration: none;
         margin-left: 35px;
@@ -60,10 +60,10 @@
         transition: color 0.3s;
     }
 
-   .menu a:hover,.menu a.active { color: #C9A961; }
+  .menu a:hover,.menu a.active { color: #C9A961; }
 
     /* Hero */
-   .hero {
+  .hero {
         height: 100vh;
         position: relative;
         display: flex;
@@ -75,7 +75,7 @@
         background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
     }
 
-   .hero-bg-image {
+  .hero-bg-image {
         position: absolute;
         top: 0;
         left: 0;
@@ -85,7 +85,7 @@
         z-index: -2;
     }
 
-   .hero::after {
+  .hero::after {
         content: '';
         position: absolute;
         top: 0;
@@ -96,33 +96,33 @@
         z-index: 0;
     }
 
-   .hero-content {
+  .hero-content {
         max-width: 900px;
         padding: 0 30px;
         z-index: 1;
         position: relative;
     }
 
-   .hero h1 {
+  .hero h1 {
         font-size: 72px;
         font-weight: 300;
         margin-bottom: 25px;
         line-height: 1.2;
     }
 
-   .hero h1 span {
+  .hero h1 span {
         color: #C9A961;
         font-weight: 600;
     }
 
-   .hero p {
+  .hero p {
         font-size: 22px;
         font-weight: 300;
         margin-bottom: 40px;
         opacity: 0.9;
     }
 
-   .btn {
+  .btn {
         background: linear-gradient(135deg, #C9A961 0%, #B89650 100%);
         color: white;
         padding: 18px 45px;
@@ -139,19 +139,19 @@
         box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
     }
 
-   .btn:hover {
+  .btn:hover {
         transform: translateY(-3px);
         box-shadow: 0 15px 40px rgba(201, 169, 97, 0.5);
     }
 
     /* Content Section */
-   .content {
+  .content {
         max-width: 1000px;
         margin: 120px auto;
         padding: 0 30px;
     }
 
-   .content h2 {
+  .content h2 {
         text-align: center;
         font-size: 48px;
         font-weight: 300;
@@ -159,7 +159,7 @@
         color: #3D2B1F;
     }
 
-   .intro-text {
+  .intro-text {
         text-align: center;
         font-size: 18px;
         color: #666;
@@ -167,14 +167,14 @@
         line-height: 1.8;
     }
 
-   .features {
+  .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 35px;
         margin: 60px 0;
     }
 
-   .feature-box {
+  .feature-box {
         background: #F8F5F0;
         padding: 35px;
         border-radius: 15px;
@@ -182,43 +182,50 @@
         transition: all 0.3s;
     }
 
-   .feature-box:hover {
+  .feature-box:hover {
         transform: translateY(-5px);
         box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     }
 
-   .feature-box i {
+  .feature-box i {
         font-size: 36px;
         color: #C9A961;
         margin-bottom: 20px;
     }
 
-   .feature-box h3 {
+  .feature-box h3 {
         color: #3D2B1F;
         margin-bottom: 15px;
         font-size: 24px;
     }
 
-   .feature-box p {
+  .feature-box p {
         color: #666;
         line-height: 1.7;
     }
 
-    /* Interactive Weather Widget for Ruaha */
-   .weather-widget {
+    /* Widgets Container */
+  .widgets-container {
         position: fixed;
         right: 20px;
         top: 100px;
+        width: 320px;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Weather Widget */
+  .weather-widget {
         background: white;
         padding: 25px;
         border-radius: 15px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        width: 320px;
         border-left: 4px solid #C9A961;
-        z-index: 999;
     }
 
-   .weather-widget h3 {
+  .weather-widget h3 {
         color: #3D2B1F;
         margin-bottom: 15px;
         font-size: 18px;
@@ -227,11 +234,11 @@
         gap: 10px;
     }
 
-   .weather-widget h3 i {
+  .weather-widget h3 i {
         color: #C9A961;
     }
 
-   .month-selector {
+  .month-selector {
         width: 100%;
         padding: 12px;
         border: 2px solid #C9A961;
@@ -242,14 +249,14 @@
         background: white;
     }
 
-   .weather-result {
+  .weather-result {
         background: #F8F5F0;
         padding: 18px;
         border-radius: 10px;
         display: none;
     }
 
-   .weather-result.show {
+  .weather-result.show {
         display: block;
         animation: fadeIn 0.4s ease;
     }
@@ -259,7 +266,7 @@
         to { opacity: 1; transform: translateY(0); }
     }
 
-   .weather-stat {
+  .weather-stat {
         display: flex;
         justify-content: space-between;
         margin-bottom: 12px;
@@ -267,24 +274,24 @@
         border-bottom: 1px solid #ddd;
     }
 
-   .weather-stat:last-child {
+  .weather-stat:last-child {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 0;
     }
 
-   .weather-label {
+  .weather-label {
         color: #666;
         font-size: 13px;
     }
 
-   .weather-value {
+  .weather-value {
         font-weight: 600;
         color: #3D2B1F;
         font-size: 14px;
     }
 
-   .recommendation {
+  .recommendation {
         margin-top: 15px;
         padding: 12px;
         border-radius: 8px;
@@ -292,26 +299,81 @@
         line-height: 1.6;
     }
 
-   .recommendation.excellent {
+  .recommendation.excellent {
         background: #d4edda;
         color: #155724;
         border-left: 3px solid #28a745;
     }
 
-   .recommendation.good {
+  .recommendation.good {
         background: #fff3cd;
         color: #856404;
         border-left: 3px solid #ffc107;
     }
 
-   .recommendation.poor {
+  .recommendation.poor {
         background: #f8d7da;
         color: #721c24;
         border-left: 3px solid #dc3545;
     }
 
+    /* Currency Converter Widget */
+  .currency-widget {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        border-left: 4px solid #C9A961;
+    }
+
+  .currency-widget h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+  .currency-widget h3 i {
+        color: #C9A961;
+    }
+
+  .currency-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+  .currency-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+  .currency-select {
+        width: 80px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+  .currency-result {
+        background: #F8F5F0;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 13px;
+        color: #666;
+        margin-top: 10px;
+    }
+
     /* CTA Section */
-   .cta {
+  .cta {
         background: linear-gradient(135deg, #3D2B1F 0%, #1A1A1A 100%);
         color: white;
         text-align: center;
@@ -319,13 +381,13 @@
         margin-top: 100px;
     }
 
-   .cta h2 {
+  .cta h2 {
         font-size: 42px;
         font-weight: 300;
         margin-bottom: 20px;
     }
 
-   .cta p {
+  .cta p {
         font-size: 18px;
         margin-bottom: 35px;
         opacity: 0.9;
@@ -343,18 +405,18 @@
 
     /* Mobile */
     @media (max-width: 768px) {
-       .hero h1 { font-size: 40px; }
-       .hero p { font-size: 18px; }
-       .menu { display: none; }
-       .weather-widget {
+      .hero h1 { font-size: 40px; }
+      .hero p { font-size: 18px; }
+      .menu { display: none; }
+      .widgets-container {
             position: relative;
             width: 100%;
             right: 0;
             top: 0;
             margin: 40px 20px;
         }
-       .content h2 { font-size: 36px; }
-       .features { grid-template-columns: 1fr; }
+      .content h2 { font-size: 36px; }
+      .features { grid-template-columns: 1fr; }
     }
 </style>
 </head>
@@ -372,13 +434,14 @@
             <a href="tarangire.html">Tarangire</a>
             <a href="ruaha.html" class="active">Ruaha</a>
             <a href="booking.html">Book Now</a>
+            <a href="about.html">Contact</a>
         </div>
     </nav>
 </header>
 
 <!-- Hero -->
 <section class="hero">
-    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2670&auto=format&fit=crop"
+    <img src=url"ruaha.jpg"
          alt="Ruaha National Park"
          class="hero-bg-image"
          onerror="this.style.display='none'">
@@ -390,39 +453,66 @@
     </div>
 </section>
 
-<!-- Interactive Weather Widget - Unique to Ruaha Page -->
-<div class="weather-widget">
-    <h3><i class="fas fa-calendar-alt"></i> When to Visit Ruaha</h3>
-    <select class="month-selector" id="monthSelect" onchange="updateWeather()">
-        <option value="">Select Month</option>
-        <option value="jan">January</option>
-        <option value="feb">February</option>
-        <option value="mar">March</option>
-        <option value="apr">April</option>
-        <option value="may">May</option>
-        <option value="jun">June</option>
-        <option value="jul">July</option>
-        <option value="aug">August</option>
-        <option value="sep">September</option>
-        <option value="oct">October</option>
-        <option value="nov">November</option>
-        <option value="dec">December</option>
-    </select>
+<!-- Widgets: Weather + Currency -->
+<div class="widgets-container">
+    <!-- Weather Widget -->
+    <div class="weather-widget">
+        <h3><i class="fas fa-calendar-alt"></i> When to Visit Ruaha</h3>
+        <select class="month-selector" id="monthSelect" onchange="updateWeather()">
+            <option value="">Select Month</option>
+            <option value="jan">January</option>
+            <option value="feb">February</option>
+            <option value="mar">March</option>
+            <option value="apr">April</option>
+            <option value="may">May</option>
+            <option value="jun">June</option>
+            <option value="jul">July</option>
+            <option value="aug">August</option>
+            <option value="sep">September</option>
+            <option value="oct">October</option>
+            <option value="nov">November</option>
+            <option value="dec">December</option>
+        </select>
 
-    <div class="weather-result" id="weatherResult">
-        <div class="weather-stat">
-            <span class="weather-label">Avg Temperature</span>
-            <span class="weather-value" id="temp">-</span>
+        <div class="weather-result" id="weatherResult">
+            <div class="weather-stat">
+                <span class="weather-label">Avg Temperature</span>
+                <span class="weather-value" id="temp">-</span>
+            </div>
+            <div class="weather-stat">
+                <span class="weather-label">Rainfall</span>
+                <span class="weather-value" id="rain">-</span>
+            </div>
+            <div class="weather-stat">
+                <span class="weather-label">Wildlife Viewing</span>
+                <span class="weather-value" id="wildlife">-</span>
+            </div>
+            <div class="recommendation" id="recommendation"></div>
         </div>
-        <div class="weather-stat">
-            <span class="weather-label">Rainfall</span>
-            <span class="weather-value" id="rain">-</span>
+    </div>
+
+    <!-- Currency Converter Widget -->
+    <div class="currency-widget">
+        <h3><i class="fas fa-exchange-alt"></i> Currency Converter</h3>
+        <div class="currency-row">
+            <input type="number" class="currency-input" id="amount" value="1000" oninput="convertCurrency()">
+            <select class="currency-select" id="fromCurrency" onchange="convertCurrency()">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="TZS">TZS</option>
+            </select>
         </div>
-        <div class="weather-stat">
-            <span class="weather-label">Wildlife Viewing</span>
-            <span class="weather-value" id="wildlife">-</span>
+        <div class="currency-row">
+            <input type="text" class="currency-input" id="convertedAmount" readonly>
+            <select class="currency-select" id="toCurrency" onchange="convertCurrency()">
+                <option value="TZS">TZS</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
         </div>
-        <div class="recommendation" id="recommendation"></div>
+        <div class="currency-result" id="rateInfo">Live rates via exchangerate.host</div>
     </div>
 </div>
 
@@ -545,7 +635,40 @@
 
         resultDiv.classList.add('show');
     }
+
+    // Currency Converter - Uses live rates from exchangerate.host
+    let rates = {};
+
+    async function fetchRates() {
+        try {
+            const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR,GBP,TZS');
+            const data = await res.json();
+            rates = { USD: 1,...data.rates };
+            document.getElementById('rateInfo').textContent = 'Live rates updated: ' + new Date().toLocaleDateString();
+        } catch (e) {
+            // Fallback rates if API fails
+            rates = { USD: 1, EUR: 0.92, GBP: 0.79, TZS: 2510 };
+            document.getElementById('rateInfo').textContent = 'Using cached rates (offline)';
+        }
+        convertCurrency();
+    }
+
+    function convertCurrency() {
+        const amount = parseFloat(document.getElementById('amount').value) || 0;
+        const from = document.getElementById('fromCurrency').value;
+        const to = document.getElementById('toCurrency').value;
+
+        if (!rates[from] ||!rates[to]) return;
+
+        const usdAmount = amount / rates[from];
+        const converted = (usdAmount * rates[to]).toFixed(2);
+
+        document.getElementById('convertedAmount').value = converted;
+    }
+
+    // Load rates on page load
+    fetchRates();
 </script>
 
 </body>
-  </html>
+   </html>
