@@ -1,372 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Serengeti | Aman Safari</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
+<title>Serengeti Luxury Safari - Kilimanjaro Expeditions</title>
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#07130e;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-
-left:0;
-
-right:0;
-
-padding:18px 6%;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-background:rgba(0,0,0,.25);
-
-backdrop-filter:blur(12px);
-
-z-index:1000;
-}
-
-.logo{
-font-family:'Playfair Display';
-font-size:22px;
-color:#d4af37;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav a{
-color:#ddd;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:#d4af37;
-}
-
-/* HERO */
-
-.hero{
-
-height:100vh;
-
-position:relative;
-
-display:flex;
-
-align-items:center;
-
-padding:0 6%;
-
-background:
-linear-gradient(
-rgba(0,0,0,.35),
-rgba(0,0,0,.75)
-),
-
-url("https://images.unsplash.com/photo-1549366021-9f761d040a94?auto=format&fit=crop&w=1800&q=80");
-
-background-size:cover;
-
-background-position:center;
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(
-circle,
-transparent,
-rgba(0,0,0,.65)
-);
-
-}
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-max-width:700px;
-
-animation:fade 1.4s ease;
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(50px);
-}
-
-to{
-opacity:1;
-transform:none;
-}
-
-}
-
-.hero h1{
-
-font-family:
-'Playfair Display';
-
-font-size:
-clamp(
-48px,
-8vw,
-95px
-);
-
-line-height:1;
-}
-
-.hero span{
-color:#d4af37;
-}
-
-.hero p{
-
-margin-top:20px;
-
-font-size:17px;
-
-color:#ddd;
-
-max-width:550px;
-
-line-height:1.8;
-}
-
-.buttons{
-
-display:flex;
-
-gap:14px;
-
-margin-top:30px;
-
-flex-wrap:wrap;
-}
-
-.btn{
-
-padding:14px 26px;
-
-border-radius:999px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.3s;
-}
-
-.primary{
-
-background:#d4af37;
-
-color:black;
-}
-
-.secondary{
-
-border:1px solid white;
-
-color:white;
-}
-
-.btn:hover{
-
-transform:
-translateY(-4px);
-}
-
-/* INFO */
-
-.section{
-
-padding:90px 6%;
-}
-
-.card{
-
-background:#111c16;
-
-padding:35px;
-
-border-radius:22px;
-
-max-width:900px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.4);
-}
-
-.card h2{
-
-font-family:
-'Playfair Display';
-
-margin-bottom:20px;
-
-color:#d4af37;
-}
-
-.card p{
-
-line-height:1.9;
-
-color:#d7d7d7;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-nav ul{
-display:none;
-}
-
-.hero{
-
-height:88vh;
-}
-
-.hero p{
-
-font-size:15px;
-}
-
-}
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+        font-family: Arial, sans-serif; 
+        line-height: 1.6; 
+        color: #333;
+    }
+    
+    /* Header */
+    header {
+        background: rgba(0,0,0,0.8);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        padding: 15px 0;
+    }
+    
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        color: #C9A961;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 14px;
+    }
+    
+    .menu a:hover, .menu a.active { color: #C9A961; }
+    
+    /* Hero */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('https://images.unsplash.com/photo-1516426122078-cd0988402c8b?q=80&w=2670') center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 0 20px;
+    }
+    
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .btn {
+        background: #C9A961;
+        color: white;
+        padding: 15px 40px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .btn:hover { background: #B89650; }
+    
+    /* Content Section */
+    .content {
+        max-width: 1000px;
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+    
+    .content h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #3D2B1F;
+    }
+    
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin: 50px 0;
+    }
+    
+    .feature-box {
+        background: #F8F5F0;
+        padding: 30px;
+        border-radius: 10px;
+        border-left: 4px solid #C9A961;
+    }
+    
+    .feature-box h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+    }
+    
+    /* Best Time Widget */
+    .widget {
+        position: fixed;
+        right: 20px;
+        top: 100px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        width: 280px;
+        border-left: 4px solid #C9A961;
+    }
+    
+    .widget h3 {
+        color: #3D2B1F;
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+    
+    .widget-item {
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .widget-item:last-child { border: none; }
+    
+    .widget-item strong {
+        color: #C9A961;
+        display: block;
+        margin-bottom: 3px;
+    }
+    
+    /* CTA Section */
+    .cta {
+        background: #3D2B1F;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        margin-top: 80px;
+    }
+    
+    .cta h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    /* Footer */
+    footer {
+        background: #1A1A1A;
+        color: #aaa;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    footer a { color: #C9A961; text-decoration: none; }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 32px; }
+        .widget { display: none; }
+        .menu a { margin-left: 15px; font-size: 12px; }
+    }
 </style>
-
 </head>
-
 <body>
 
-<nav>
+<!-- Header with full menu linking all pages -->
+<header>
+    <nav>
+        <div class="logo">KILIMANJARO</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="kilimanjaro.html">Kilimanjaro</a>
+            <a href="serengeti.html" class="active">Serengeti</a>
+            <a href="ngorongoro.html">Ngorongoro</a>
+            <a href="tarangire.html">Tarangire</a>
+            <a href="ruaha.html">Ruaha</a>
+            <a href="booking.html">Book Now</a>
+        </div>
+    </nav>
+</header>
 
-<div class="logo">
-AMAN SAFARI
-</div>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="serengeti.html">Serengeti</a></li>
-
-<li><a href="tarangire.html">Tarangire</a></li>
-
-<li><a href="ngorongoro.html">Ngorongoro</a></li>
-
-<li><a href="ruaha.html">Ruaha</a></li>
-
-<li><a href="kilimanjaro.html">Kilimanjaro</a></li>
-
-</ul>
-
-</nav>
-
+<!-- Hero -->
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>
-
-SERENGETI
-
-<span>
-
-GREAT MIGRATION
-
-</span>
-
-</h1>
-
-<p>
-
-Experience endless plains, dramatic wildlife encounters, and one of the world's most unforgettable safari landscapes.
-
-</p>
-
-<div class="buttons">
-
-<a class="btn primary" href="tarangire.html">
-
-Next Park
-
-</a>
-
-<a class="btn secondary" href="index.html">
-
-Back Home
-
-</a>
-
-</div>
-
-</div>
-
+    <div>
+        <h1>Serengeti Great Migration</h1>
+        <p>Witness the greatest wildlife spectacle on Earth</p>
+        <a href="booking.html?route=Serengeti" class="btn">Book Serengeti Safari</a>
+    </div>
 </section>
 
-<section class="section">
-
-<div class="card">
-
-<h2>
-
-Why Serengeti?
-
-</h2>
-
-<p>
-
-Witness iconic wildlife, open savannah, luxury camps, and extraordinary safari moments designed for unforgettable journeys.
-
-</p>
-
+<!-- Best Time Widget - Same on all pages -->
+<div class="widget">
+    <h3>Best Time to Visit</h3>
+    <div class="widget-item">
+        <strong>Serengeti</strong>
+        Jun-Oct - Great Migration
+    </div>
+    <div class="widget-item">
+        <strong>Kilimanjaro</strong>
+        Jan-Mar & Jun-Oct
+    </div>
+    <div class="widget-item">
+        <strong>Ngorongoro</strong>
+        Jun-Oct - Dry Season
+    </div>
+    <div class="widget-item">
+        <strong>Tarangire</strong>
+        Jun-Feb - Elephant Season
+    </div>
+    <div class="widget-item">
+        <strong>Ruaha</strong>
+        Jun-Oct - Predator Activity
+    </div>
 </div>
 
-</section>
-
-</body>
-
-  </html>
+<!-- Content -->
+<section class="content">
+    <h2>Experience the Serengeti</h2>
+    <p style="text-align: center; font-size: 18px; color: #666; margin-bottom: 50px;">
+        14,763 sq km of endless plains teeming with over 2 million wildebeest, zebras, and gazelles. 
+        Home to the Big Five and the annual Great Migration - nature's most dramatic event.
+    </p>
+    
+    <div class="features">
+        <div class="feature-box">
+            <h3>Great Migration</h3>
+            <p>June-October: Witness 2 million animals cross the Mara River. Predator action at its peak.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Big Five Safaris</h3>
+            <p>Lion, leopard, elephant, rhino, buffalo. Highest concentration of predators in Africa.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Luxury Mobile Camps</h3>
+            <p>Follow the migration in 5-star tented camps. Gourmet dining under the stars.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Hot Air Balloon</h3>
+            <p>Sunrise flights over the plains. Champagne breakfast in the bush after landing.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Expert Guides</h3>
+            <p>Local guides with 15
