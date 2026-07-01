@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aman Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+        h1 { color: #C9A961; }
+        .stat { background: #2a2a2a; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .stat h3 { color: #C9A961; margin: 0 0 10px 0; }
+        button { background: #C9A961; color: #000; border: none; padding: 10px 20px; border-radius: 5px; margin: 5px; }
+        pre { background: #000; padding: 10px; overflow-x: auto; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>🦁 Aman Safari Stats</h1>
+    
+    <div class="stat">
+        <h3>Total Visitors</h3>
+        <div id="totalVisits">0</div>
+    </div>
+    
+    <div class="stat">
+        <h3>Total Clicks</h3>
+        <div id="totalClicks">0</div>
+    </div>
+    
+    <button onclick="showVisits()">Show All Visitors</button>
+    <button onclick="showClicks()">Show All Clicks</button>
+    <button onclick="clearData()">Clear Data</button>
+    
+    <div id="output"></div>
+
+    <script>
+        function updateStats() {
+            const visits = JSON.parse(localStorage.getItem('aman_visits') || '[]');
+            const clicks = JSON.parse(localStorage.getItem('aman_clicks') || '[]');
+            document.getElementById('totalVisits').innerText = visits.length;
+            document.getElementById('totalClicks').innerText = clicks.length;
+        }
+        
+        function showVisits() {
+            const visits = JSON.parse(localStorage.getItem('aman_visits') || '[]');
+            let html = '<h3>Visitor Log</h3>';
+            visits.reverse().forEach(v => {
+                html += `<pre>Time: ${v.time}\nPage: ${v.page}\nFrom: ${v.referrer}\nDevice: ${v.screen}</pre>`;
+            });
+            document.getElementById('output').innerHTML = html;
+        }
+        
+        function showClicks() {
+            const clicks = JSON.parse(localStorage.getItem('aman_clicks') || '[]');
+            let html = '<h3>Click Log</h3>';
+            clicks.reverse().forEach(c => {
+                html += `<pre>Time: ${c.time}\nClicked: ${c.text}\nLink: ${c.href}\nPage: ${c.page}</pre>`;
+            });
+            document.getElementById('output').innerHTML = html;
+        }
+        
+        function clearData() {
+            if(confirm('Delete all tracking data?')) {
+                localStorage.removeItem('aman_visits');
+                localStorage.removeItem('aman_clicks');
+                updateStats();
+                document.getElementById('output').innerHTML = '';
+            }
+        }
+        
+        updateStats();
+    </script>
+</body>
+      </html>
